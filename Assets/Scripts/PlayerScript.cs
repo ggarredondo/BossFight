@@ -42,6 +42,7 @@ public class PlayerScript : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, rotation_angle, 0f);
         move_dir = (Quaternion.Euler(0f, target_angle, 0f) * Vector3.forward).normalized; // movement relative to the camera
 
+        // base movements phases: walking, running and sprinting
         if (move_magnitude >= walk_speed_min && move_magnitude < walk_speed_max)
             final_speed = walk_speed;
         else if (Input.GetButton("Sprint"))
