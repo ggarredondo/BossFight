@@ -35,9 +35,9 @@ public class PlayerScript : MonoBehaviour
     private void UnlockedMovement()
     {
         // base movement
-        horizontal = 0f;
-        vertical = 1f;
-        direction.Set(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
+        horizontal = Input.GetAxis("Horizontal");
+        vertical = Input.GetAxis("Vertical");
+        direction.Set(horizontal, 0f, vertical);
         Debug.Log(direction);
         move_magnitude = direction.sqrMagnitude;
         direction = direction.normalized;
