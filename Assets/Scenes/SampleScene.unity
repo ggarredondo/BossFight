@@ -273,7 +273,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 195939724}
-  m_LocalRotation: {x: 0.5728244, y: -0.009427798, z: -0.0018053985, w: 0.8196219}
+  m_LocalRotation: {x: 0.5728244, y: -0.0094278315, z: -0.001805405, w: 0.8196219}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -588,7 +588,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.19101493, y: 0.000000019052798, z: -0.0000000037050192, w: 0.9815872}
+  m_LocalRotation: {x: 0.19101493, y: -0.000000018786732, z: 0.000000003653207, w: 0.9815872}
   m_LocalPosition: {x: 0, y: 2.79, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -653,7 +653,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 977226207}
-  m_LocalRotation: {x: 0.55782115, y: -0.009393398, z: -0.0019765864, w: 0.82990575}
+  m_LocalRotation: {x: 0.55782115, y: -0.009393435, z: -0.0019765943, w: 0.82990575}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1088,12 +1088,11 @@ MonoBehaviour:
   rb: {fileID: 1841483659}
   col: {fileID: 1841483660}
   cam: {fileID: 963194228}
-  speed: 20
-  walk_speed_mult: 0.5
+  walk_speed: 10
   walk_speed_min: 0
   walk_speed_max: 0.5
-  run_speed_mult: 1
-  sprint_speed_mult: 2
+  run_speed: 15
+  sprint_speed: 20
   turn_smoothness: 0.2
   jump_force: 5
   jump_cooldown: 1
@@ -1182,7 +1181,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9500000, guid: af58dc7d0a875334ab3339a086077912, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: af58dc7d0a875334ab3339a086077912, type: 3}
 --- !u!4 &2055597692 stripped
 Transform:
