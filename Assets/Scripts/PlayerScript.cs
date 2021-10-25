@@ -7,6 +7,7 @@ public class PlayerScript : MonoBehaviour
     public Rigidbody rb;
     public Collider col;
     public Transform cam;
+    public Animator anim;
 
     public float walk_speed = 10f, walk_speed_min = 0f, walk_speed_max = 0.5f;
     public float run_speed = 15f;
@@ -15,12 +16,15 @@ public class PlayerScript : MonoBehaviour
     public float jump_force = 5f;
     public float jump_cooldown = 1f;
 
-    private float dist_to_ground, jump_time;
-    private float move_magnitude, turn_smooth_velocity, target_angle, rotation_angle, final_speed; // movement variables
+    private float horizontal, vertical, move_magnitude, final_speed,
+        turn_smooth_velocity, target_angle, rotation_angle; // movement variables
     private Vector3 direction, move_dir;
+    private float dist_to_ground, jump_time; // jumping variables
+    private bool is_walking, is_running, is_sprinting, is_jumping, is_falling; // animator variables
 
     private void Start() {
         rb = GetComponent<Rigidbody>();
+        anim = GetComponent<Animator>();
         dist_to_ground = col.bounds.extents.y;
     }
 
@@ -31,34 +35,47 @@ public class PlayerScript : MonoBehaviour
     private void UnlockedMovement()
     {
         // base movement
+        horizontal = 0f;
+        vertical = 1f;
         direction.Set(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
+        Debug.Log(direction);
         move_magnitude = direction.sqrMagnitude;
         direction = direction.normalized;
 
         // character faces the direction it's moving to
         target_angle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
         rotation_angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, target_angle, ref turn_smooth_velocity, turn_smoothness);
-        if (direction.magnitude >= 0.1f)
+        is_running = direction.magnitude >= 0.1f;
+        if (is_running)
             transform.rotation = Quaternion.Euler(0f, rotation_angle, 0f);
         move_dir = (Quaternion.Euler(0f, target_angle, 0f) * Vector3.forward).normalized; // movement relative to the camera
 
-        // base movements phases: walking, running and sprinting
-        if (move_magnitude >= walk_speed_min && move_magnitude < walk_speed_max)
+        // base movement phases: walking, running and sprinting
+        is_walking = move_magnitude >= walk_speed_min && move_magnitude < walk_speed_max;
+        is_sprinting = Input.GetButton("Sprint");
+        if (is_walking)
             final_speed = walk_speed;
-        else if (Input.GetButton("Sprint"))
+        else if (is_sprinting)
             final_speed = sprint_speed;
         else
             final_speed = run_speed;
         rb.AddForce(move_dir * direction.sqrMagnitude * final_speed);
     }
 
-    private void Update()
+    private void Jump()
     {
         // jumping (cooldown between jumps)
-        if (Input.GetButtonDown("Jump") && IsGrounded() && jump_time <= Time.time) {
+        is_falling = !IsGrounded();
+        is_jumping = Input.GetButtonDown("Jump") && !is_falling && jump_time <= Time.time;
+        if (is_jumping) {
             jump_time = Time.time + jump_cooldown;
             rb.AddForce(Vector3.up * jump_force, ForceMode.Impulse);
         }
+    }
+
+    void Update()
+    {
+        Jump();
     }
 
     void FixedUpdate()

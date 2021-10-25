@@ -1049,6 +1049,7 @@ GameObject:
   - component: {fileID: 1841483656}
   - component: {fileID: 1841483659}
   - component: {fileID: 1841483660}
+  - component: {fileID: 1841483658}
   - component: {fileID: 1841483657}
   m_Layer: 0
   m_Name: Player
@@ -1088,6 +1089,7 @@ MonoBehaviour:
   rb: {fileID: 1841483659}
   col: {fileID: 1841483660}
   cam: {fileID: 963194228}
+  anim: {fileID: 1841483658}
   walk_speed: 10
   walk_speed_min: 0
   walk_speed_max: 0.5
@@ -1096,6 +1098,25 @@ MonoBehaviour:
   turn_smoothness: 0.2
   jump_force: 5
   jump_cooldown: 1
+--- !u!95 &1841483658
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841483655}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: af58dc7d0a875334ab3339a086077912, type: 3}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!54 &1841483659
 Rigidbody:
   m_ObjectHideFlags: 0
