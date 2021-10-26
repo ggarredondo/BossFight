@@ -20,12 +20,13 @@ public class PlayerScript : MonoBehaviour
         turn_smooth_velocity, target_angle, rotation_angle; // movement variables
     private Vector3 direction, move_dir;
     private float dist_to_ground, jump_time; // jumping variables
-    private bool is_walking, is_running, is_sprinting, is_jumping, is_falling; // animator variables
+    private bool is_moving, is_walking, is_sprinting, is_jumping, is_falling, is_locked; // animator variables
 
     private void Start() {
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
         dist_to_ground = col.bounds.extents.y;
+        is_locked = false;
     }
 
     private bool IsGrounded() {
@@ -38,15 +39,14 @@ public class PlayerScript : MonoBehaviour
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
         direction.Set(horizontal, 0f, vertical);
-        Debug.Log(direction);
         move_magnitude = direction.sqrMagnitude;
         direction = direction.normalized;
 
         // character faces the direction it's moving to
         target_angle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
         rotation_angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, target_angle, ref turn_smooth_velocity, turn_smoothness);
-        is_running = direction.magnitude >= 0.1f;
-        if (is_running)
+        is_moving = direction.magnitude >= 0.1f;
+        if (is_moving)
             transform.rotation = Quaternion.Euler(0f, rotation_angle, 0f);
         move_dir = (Quaternion.Euler(0f, target_angle, 0f) * Vector3.forward).normalized; // movement relative to the camera
 
