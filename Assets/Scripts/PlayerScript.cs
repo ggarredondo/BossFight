@@ -51,8 +51,8 @@ public class PlayerScript : MonoBehaviour
         move_dir = (Quaternion.Euler(0f, target_angle, 0f) * Vector3.forward).normalized; // movement relative to the camera
 
         // base movement phases: walking, running and sprinting
-        is_walking = move_magnitude >= walk_speed_min && move_magnitude < walk_speed_max;
-        is_sprinting = Input.GetButton("Sprint");
+        is_walking = move_magnitude >= walk_speed_min && move_magnitude < walk_speed_max && is_moving;
+        is_sprinting = Input.GetButton("Sprint") && !is_walking;
         if (is_walking)
             final_speed = walk_speed;
         else if (is_sprinting)
@@ -73,9 +73,22 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
+    private void Animation()
+    {
+        anim.SetFloat("horizontal", horizontal);
+        anim.SetFloat("vertical", vertical);
+        anim.SetBool("is_locked", is_locked);
+        anim.SetBool("is_moving", is_moving);
+        anim.SetBool("is_walking", is_walking);
+        anim.SetBool("is_sprinting", is_sprinting);
+        anim.SetBool("is_jumping", is_jumping);
+        anim.SetBool("is_falling", is_falling);
+    }
+
     void Update()
     {
         Jump();
+        Animation();
     }
 
     void FixedUpdate()
