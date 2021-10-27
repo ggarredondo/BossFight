@@ -273,7 +273,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 195939724}
-  m_LocalRotation: {x: 0.5728244, y: -0.0094278315, z: -0.001805405, w: 0.8196219}
+  m_LocalRotation: {x: 0.5728244, y: -0.009427798, z: -0.0018053985, w: 0.8196219}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -588,7 +588,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.19101493, y: -0.000000018786732, z: 0.000000003653207, w: 0.9815872}
+  m_LocalRotation: {x: 0.19101493, y: 0.000000019052798, z: -0.0000000037050192, w: 0.9815872}
   m_LocalPosition: {x: 0, y: 2.79, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -653,7 +653,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 977226207}
-  m_LocalRotation: {x: 0.55782115, y: -0.009393435, z: -0.0019765943, w: 0.82990575}
+  m_LocalRotation: {x: 0.55782115, y: -0.009393398, z: -0.0019765864, w: 0.82990575}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1047,9 +1047,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1841483656}
-  - component: {fileID: 1841483659}
-  - component: {fileID: 1841483660}
   - component: {fileID: 1841483658}
+  - component: {fileID: 1841483659}
   - component: {fileID: 1841483657}
   m_Layer: 0
   m_Name: Player
@@ -1086,18 +1085,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c93008c4f08586d42ac7ed536aba8d76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 1841483659}
-  col: {fileID: 1841483660}
   cam: {fileID: 963194228}
   anim: {fileID: 1841483658}
-  walk_speed: 10
-  walk_speed_min: 0
-  walk_speed_max: 0.5
-  run_speed: 15
-  sprint_speed: 20
+  controller: {fileID: 1841483659}
+  walk_min: 0
+  walk_max: 0.5
   turn_smoothness: 0.2
-  jump_force: 5
+  jump_height: 2
   jump_cooldown: 1
+  gravity: 11
 --- !u!95 &1841483658
 Animator:
   serializedVersion: 3
@@ -1111,30 +1107,14 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 1638c0619762eed49bef26715240eea7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!54 &1841483659
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1841483655}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 1.5
-  m_AngularDrag: 0
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 80
-  m_CollisionDetection: 0
---- !u!136 &1841483660
-CapsuleCollider:
+--- !u!143 &1841483659
+CharacterController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1143,9 +1123,13 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.3
+  serializedVersion: 2
   m_Height: 2
-  m_Direction: 1
+  m_Radius: 0.35
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &2055597691
 PrefabInstance:

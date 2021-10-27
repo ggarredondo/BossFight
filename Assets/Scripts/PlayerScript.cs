@@ -4,29 +4,26 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
-    public Rigidbody rb;
-    public Collider col;
     public Transform cam;
     public Animator anim;
-    public CharacterController con;
+    public CharacterController controller;
 
-    public float walk_speed = 10f, walk_speed_min = 0f, walk_speed_max = 0.5f;
-    public float run_speed = 15f;
-    public float sprint_speed = 20f;
+    public float walk_min = 0f, walk_max = 0.5f;
     public float turn_smoothness = 0.2f;
-    public float jump_force = 5f;
+    public float jump_height = 2f;
     public float jump_cooldown = 1f;
+    public float gravity = 11.81f;
 
-    private float horizontal, vertical, move_magnitude, final_speed,
-        turn_smooth_velocity, target_angle, rotation_angle; // movement variables
+    private float horizontal, vertical, move_magnitude,
+        turn_smooth_velocity, target_angle, rotation_angle; // unlocked movement variables
     private Vector3 direction, move_dir;
     private float dist_to_ground, jump_time; // jumping variables
-    private bool is_moving, is_walking, is_sprinting, is_jumping, is_falling, is_locked; // animator variables
+    private Vector3 jump_dir;
+    private bool is_moving, is_walking, is_sprinting, is_jumping, is_grounded, is_locked; // animator variables
 
     private void Start() {
-        rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
-        dist_to_ground = col.bounds.extents.y;
+        dist_to_ground = controller.bounds.extents.y;
         is_locked = false;
     }
 
@@ -46,32 +43,37 @@ public class PlayerScript : MonoBehaviour
         // character faces the direction it's moving to
         target_angle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
         rotation_angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, target_angle, ref turn_smooth_velocity, turn_smoothness);
-        is_moving = direction.magnitude >= 0.1f;
+        is_moving = direction.magnitude > 0f;
         if (is_moving)
             transform.rotation = Quaternion.Euler(0f, rotation_angle, 0f);
         move_dir = (Quaternion.Euler(0f, target_angle, 0f) * Vector3.forward).normalized; // movement relative to the camera
 
         // base movement phases: walking, running and sprinting
-        is_walking = move_magnitude >= walk_speed_min && move_magnitude < walk_speed_max && is_moving && !is_sprinting;
+        is_walking = move_magnitude >= walk_min && move_magnitude < walk_max && is_moving && !is_sprinting;
         is_sprinting = Input.GetButton("Sprint") && is_moving && !is_walking;
-        if (is_walking)
-            final_speed = walk_speed;
-        else if (is_sprinting)
-            final_speed = sprint_speed;
-        else
-            final_speed = run_speed;
-        rb.AddForce(move_dir * direction.sqrMagnitude * final_speed);
+
+        // final movement
+        controller.Move(move_dir * direction.magnitude * Time.deltaTime);
     }
 
     private void Jump()
     {
-        // jumping (cooldown between jumps)
-        is_falling = !IsGrounded();
-        is_jumping = Input.GetButtonDown("Jump") && !is_falling && jump_time <= Time.time;
-        if (is_jumping) {
+        // jumping (cooldown between jumps) and falling
+        is_grounded = IsGrounded();
+        is_jumping = Input.GetButtonDown("Jump") && is_grounded && jump_time <= Time.time;
+        jump_dir = Vector3.zero;
+        if (is_jumping)
+        {
             jump_time = Time.time + jump_cooldown;
-            rb.AddForce(Vector3.up * jump_force, ForceMode.Impulse);
+            jump_dir.y = jump_height;
         }
+        else if (!is_grounded)
+            jump_dir += Physics.gravity * Time.deltaTime;
+        Debug.Log("button: " + Input.GetButtonDown("Jump"));
+        Debug.Log("is_grounded: " + is_grounded);
+        Debug.Log("jump_time <= Time.time: " + (jump_time <= Time.time));
+        Debug.Log("jump_dir: " + jump_dir);
+        controller.Move(jump_dir * Time.deltaTime);
     }
 
     private void Animation()
@@ -82,18 +84,14 @@ public class PlayerScript : MonoBehaviour
         anim.SetBool("is_moving", is_moving);
         anim.SetBool("is_walking", is_walking);
         anim.SetBool("is_sprinting", is_sprinting);
-        //anim.SetBool("is_jumping", is_jumping);
-        //anim.SetBool("is_falling", is_falling);
+        anim.SetBool("is_jumping", is_jumping);
+        anim.SetBool("is_grounded", is_grounded);
     }
 
     void Update()
     {
-        Jump();
-    }
-
-    void FixedUpdate()
-    {
         UnlockedMovement();
+        Jump();
         Animation();
     }
 }
