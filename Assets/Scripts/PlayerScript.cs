@@ -12,11 +12,12 @@ public class PlayerScript : MonoBehaviour
     public float turn_smoothness = 0.2f;
     public float jump_height = 2f;
 
-    private float horizontal, vertical, move_magnitude,
-        turn_smooth_velocity, target_angle, rotation_angle; // unlocked movement variables
+    // movement variables
+    private float horizontal, vertical, height, move_magnitude, turn_smooth_velocity, target_angle, rotation_angle,
+        dist_to_ground; 
     private Vector3 direction, move_dir;
-    private float dist_to_ground, jump_time; // jumping variables
-    private bool is_moving, is_walking, is_sprinting, is_dodging, is_grounded, is_landing, is_locked; // animator variables
+    private bool is_moving, is_walking, is_sprinting, is_dodging, is_grounded, is_locked; // animator variables
+    private const float ul_walk_speed = 1.566f, ul_run_speed = 3.408f, ul_sprint_speed = 4.4896f;
 
     private void Start() {
         anim = GetComponent<Animator>();
@@ -51,10 +52,17 @@ public class PlayerScript : MonoBehaviour
     private void Dodge() // directional dodge is dash, no direction is jump
     {
         is_dodging = Input.GetButtonDown("Dodge") && is_grounded;
-        if (direction.magnitude == 0)
-            move_dir.y += jump_height;
+        if (is_dodging) {
+            height += jump_height;
+            is_grounded = false;
+        }
     }
 
+    private void Falling()
+    {
+        if (!is_grounded)
+            height += Physics.gravity.y * Time.deltaTime;
+    }
     private void Animation()
     {
         anim.SetFloat("speed", speed);
@@ -71,17 +79,20 @@ public class PlayerScript : MonoBehaviour
     void Update()
     {
         is_grounded = IsGrounded();
+        //anim.applyRootMotion = is_grounded;
 
         // basic input
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
         direction.Set(horizontal, 0f, vertical);
 
-        //Dodge();
         UnlockedMovement();
+        //Dodge();
+        //Falling();
         Animation();
 
         // final movement
+        move_dir.y = height;
         if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Landing"))
             controller.Move(move_dir * direction.magnitude * Time.deltaTime);
     }
