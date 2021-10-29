@@ -10,7 +10,7 @@ public class PlayerScript : MonoBehaviour
 
     public float speed = 1f, walk_range_min = 0f, walk_range_max = 0.5f;
     public float turn_smoothness = 0.2f;
-    public float jump_height = 4f, jump_cooldown = 1f;
+    public float jump_height = 4f, jump_cooldown = 2f;
 
     // movement variables
     private float horizontal, vertical, move_magnitude, turn_smooth_velocity, target_angle, rotation_angle,
@@ -39,7 +39,7 @@ public class PlayerScript : MonoBehaviour
         target_angle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
         rotation_angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, target_angle, ref turn_smooth_velocity, turn_smoothness);
         is_moving = direction.magnitude > 0f;
-        if (is_moving)
+        if (is_moving && !anim.GetCurrentAnimatorStateInfo(0).IsName("Landing"))
             transform.rotation = Quaternion.Euler(0f, rotation_angle, 0f);
         move_dir = (Quaternion.Euler(0f, target_angle, 0f) * Vector3.forward).normalized; // movement relative to the camera
 
