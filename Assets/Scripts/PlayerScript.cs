@@ -10,20 +10,21 @@ public class PlayerScript : MonoBehaviour
 
     public float speed = 1f, walk_range_min = 0f, walk_range_max = 0.5f;
     public float turn_smoothness = 0.2f;
-    public float jump_height = 4f, jump_cooldown = 2f;
+    public float jump_height = 4f, dodge_cooldown = 1f, jump_cooldown = 2f;
 
     // movement variables
     private float horizontal, vertical, move_magnitude, turn_smooth_velocity, target_angle, rotation_angle,
-        dist_to_ground, jump_time;
+        dist_to_ground, dodge_time;
     private Vector3 direction, move_dir, height_dir;
     private bool is_moving, is_walking, is_sprinting, is_dodging, is_jumping, is_grounded, is_locked; // animator variables
+    private bool no_movement; // variable for situations where I don't want the character to be able to move
 
     private void Start() {
         anim = GetComponent<Animator>();
         dist_to_ground = controller.bounds.extents.y;
         is_locked = false;
         height_dir = Vector3.zero;
-        jump_time = 0f;
+        dodge_time = 0f;
     }
 
     private bool IsGrounded() {
@@ -39,7 +40,7 @@ public class PlayerScript : MonoBehaviour
         target_angle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
         rotation_angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, target_angle, ref turn_smooth_velocity, turn_smoothness);
         is_moving = direction.magnitude > 0f;
-        if (is_moving && !anim.GetCurrentAnimatorStateInfo(0).IsName("Landing"))
+        if (is_moving && !no_movement)
             transform.rotation = Quaternion.Euler(0f, rotation_angle, 0f);
         move_dir = (Quaternion.Euler(0f, target_angle, 0f) * Vector3.forward).normalized; // movement relative to the camera
 
@@ -52,12 +53,14 @@ public class PlayerScript : MonoBehaviour
 
     private void Dodge() // directional dodge is dash, no direction is jump
     {
-        is_dodging = Input.GetButtonDown("Dodge") && is_grounded;
-        is_jumping = is_dodging && !is_moving && jump_time <= Time.time;
+        is_dodging = Input.GetButtonDown("Dodge") && is_grounded && dodge_time <= Time.time;
+        is_jumping = is_dodging && !is_moving;
         if (is_jumping) {
             height_dir.y += jump_height;
-            jump_time = jump_cooldown + Time.time;
+            dodge_time = jump_cooldown + Time.time;
         }
+        else if (is_dodging)
+            dodge_time = dodge_cooldown + Time.time;
     }
 
     private void Fall()
@@ -86,6 +89,8 @@ public class PlayerScript : MonoBehaviour
     void Update()
     {
         is_grounded = IsGrounded();
+        no_movement = anim.GetCurrentAnimatorStateInfo(0).IsName("Unlocked.Sprinting Stop") || 
+            anim.GetCurrentAnimatorStateInfo(0).IsName("Landing") || anim.GetCurrentAnimatorStateInfo(0).IsName("Rolling");
 
         // basic input
         horizontal = Input.GetAxis("Horizontal");
@@ -98,7 +103,6 @@ public class PlayerScript : MonoBehaviour
         Animation();
 
         // final movement
-        if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Landing"))
-            controller.Move((move_dir * direction.magnitude + height_dir) * Time.deltaTime);
+        controller.Move((move_dir * direction.magnitude * System.Convert.ToSingle(!no_movement) + height_dir) * Time.deltaTime);
     }
 }
