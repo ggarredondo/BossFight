@@ -10,7 +10,7 @@ public class PlayerScript : MonoBehaviour
 
     public float speed = 1f, walk_range_min = 0f, walk_range_max = 0.5f;
     public float turn_smoothness = 0.2f;
-    public float jump_height = 4f, dodge_cooldown = 1f, jump_cooldown = 2f;
+    public float jump_height = 4f, dodge_cooldown = 1f, jump_cooldown = 1.2f;
 
     // movement variables
     private float horizontal, vertical, move_magnitude, turn_smooth_velocity, target_angle, rotation_angle,
