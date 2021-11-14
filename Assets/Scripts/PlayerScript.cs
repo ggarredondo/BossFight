@@ -16,7 +16,7 @@ public class PlayerScript : MonoBehaviour
     private float horizontal, vertical, move_magnitude, turn_smooth_velocity, target_angle, rotation_angle,
         dist_to_ground, dodge_time;
     private Vector3 direction, move_dir, height_dir;
-    private bool is_moving, is_walking, is_sprinting, is_dodging, is_jumping, is_grounded, is_locked; // animator variables
+    private bool is_moving, is_walking, is_sprinting, is_dodging, is_jumping, is_grounded, is_locked, is_blocking; // animator variables
     private bool no_movement; // variable for situations where I don't want the character to be able to move
 
     private void Start() {
@@ -53,7 +53,7 @@ public class PlayerScript : MonoBehaviour
 
     private void Dodge() // directional dodge is dash, no direction is jump
     {
-        is_dodging = Input.GetButtonDown("Dodge") && is_grounded && dodge_time <= Time.time;
+        is_dodging = Input.GetButtonDown("Dodge") && is_grounded && dodge_time <= Time.time && !anim.GetCurrentAnimatorStateInfo(0).IsName("Parrying");
         is_jumping = is_dodging && !is_moving;
         if (is_jumping) {
             height_dir.y += jump_height;
@@ -72,6 +72,7 @@ public class PlayerScript : MonoBehaviour
             height_dir.y = 0f;
     }
 
+    public float atk_force, atk_side, atk_height; // temp
     private void Animation()
     {
         anim.SetFloat("speed", speed);
@@ -84,13 +85,20 @@ public class PlayerScript : MonoBehaviour
         anim.SetBool("is_dodging", is_dodging);
         anim.SetBool("is_jumping", is_jumping);
         anim.SetBool("is_grounded", is_grounded);
+        anim.SetBool("is_blocking", is_blocking);
+
+        anim.SetFloat("atk_force", atk_force); // temp
+        anim.SetFloat("atk_side", atk_side); // temp
+        anim.SetFloat("atk_height", atk_height); // temp
     }
 
     void Update()
     {
         is_grounded = IsGrounded();
         no_movement = anim.GetCurrentAnimatorStateInfo(0).IsName("Unlocked.Sprinting Stop") || 
-            anim.GetCurrentAnimatorStateInfo(0).IsName("Landing") || anim.GetCurrentAnimatorStateInfo(0).IsName("Rolling");
+            anim.GetCurrentAnimatorStateInfo(0).IsName("Landing") || anim.GetCurrentAnimatorStateInfo(0).IsName("Rolling")
+            || anim.GetCurrentAnimatorStateInfo(0).IsName("Parrying");
+        is_blocking = is_grounded && Input.GetButtonDown("Block") && !anim.GetCurrentAnimatorStateInfo(0).IsName("Rolling");
 
         // basic input
         horizontal = Input.GetAxis("Horizontal");
