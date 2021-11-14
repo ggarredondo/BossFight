@@ -16,7 +16,7 @@ public class PlayerScript : MonoBehaviour
     private float horizontal, vertical, move_magnitude, turn_smooth_velocity, target_angle, rotation_angle,
         dist_to_ground, dodge_time;
     private Vector3 direction, move_dir, height_dir;
-    private bool is_moving, is_walking, is_sprinting, is_dodging, is_jumping, is_grounded, is_locked, is_blocking; // animator variables
+    private bool is_moving, is_walking, is_sprinting, press_dodge, press_jump, is_grounded, is_locked, press_block; // animator variables
     private bool no_movement; // variable for situations where I don't want the character to be able to move
 
     private void Start() {
@@ -53,13 +53,13 @@ public class PlayerScript : MonoBehaviour
 
     private void Dodge() // directional dodge is dash, no direction is jump
     {
-        is_dodging = Input.GetButtonDown("Dodge") && is_grounded && dodge_time <= Time.time && !anim.GetCurrentAnimatorStateInfo(0).IsName("Parrying");
-        is_jumping = is_dodging && !is_moving;
-        if (is_jumping) {
+        press_dodge = Input.GetButtonDown("Dodge") && is_grounded && dodge_time <= Time.time && !anim.GetCurrentAnimatorStateInfo(0).IsName("Parrying");
+        press_jump = press_dodge && !is_moving;
+        if (press_jump) {
             height_dir.y += jump_height;
             dodge_time = jump_cooldown + Time.time;
         }
-        else if (is_dodging)
+        else if (press_dodge)
             dodge_time = dodge_cooldown + Time.time;
     }
 
@@ -82,10 +82,10 @@ public class PlayerScript : MonoBehaviour
         anim.SetBool("is_moving", is_moving);
         anim.SetBool("is_walking", is_walking);
         anim.SetBool("is_sprinting", is_sprinting);
-        anim.SetBool("is_dodging", is_dodging);
-        anim.SetBool("is_jumping", is_jumping);
+        anim.SetBool("press_dodge", press_dodge);
+        anim.SetBool("press_jump", press_jump);
         anim.SetBool("is_grounded", is_grounded);
-        anim.SetBool("is_blocking", is_blocking);
+        anim.SetBool("press_block", press_block);
 
         anim.SetFloat("atk_force", atk_force); // temp
         anim.SetFloat("atk_side", atk_side); // temp
@@ -98,7 +98,7 @@ public class PlayerScript : MonoBehaviour
         no_movement = anim.GetCurrentAnimatorStateInfo(0).IsName("Unlocked.Sprinting Stop") || 
             anim.GetCurrentAnimatorStateInfo(0).IsName("Landing") || anim.GetCurrentAnimatorStateInfo(0).IsName("Rolling")
             || anim.GetCurrentAnimatorStateInfo(0).IsName("Parrying");
-        is_blocking = is_grounded && Input.GetButtonDown("Block") && !anim.GetCurrentAnimatorStateInfo(0).IsName("Rolling");
+        press_block = is_grounded && Input.GetButtonDown("Block") && !anim.GetCurrentAnimatorStateInfo(0).IsName("Rolling");
 
         // basic input
         horizontal = Input.GetAxis("Horizontal");

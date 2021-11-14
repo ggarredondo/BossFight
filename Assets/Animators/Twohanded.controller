@@ -9,13 +9,13 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: is_dodging
+    m_ConditionEvent: press_dodge
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: is_locked
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: is_jumping
+    m_ConditionEvent: press_jump
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4327555791191956419}
@@ -383,7 +383,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: is_jumping
+    m_ConditionEvent: press_jump
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1033673853172086295}
@@ -578,7 +578,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: is_blocking
+    m_ConditionEvent: press_block
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6278615868963794679}
@@ -603,7 +603,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: is_blocking
+    m_ConditionEvent: press_block
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6278615868963794679}
@@ -1097,13 +1097,13 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: is_dodging
+  - m_Name: press_dodge
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: is_jumping
+  - m_Name: press_jump
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -1115,7 +1115,7 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: is_blocking
+  - m_Name: press_block
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -2270,7 +2270,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: is_blocking
+    m_ConditionEvent: press_block
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6278615868963794679}
