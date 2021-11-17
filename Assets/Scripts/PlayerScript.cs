@@ -9,14 +9,15 @@ public class PlayerScript : MonoBehaviour
     public CharacterController controller;
 
     public float speed = 1f, walk_range_min = 0f, walk_range_max = 0.5f;
-    public float turn_smoothness = 0.2f;
-    public float jump_height = 4f, dodge_cooldown = 1f, jump_cooldown = 1.2f;
+    public float turn_smoothness = 0.1f;
+    public float jump_height = 4f;
 
     // movement variables
     private float horizontal, vertical, move_magnitude, turn_smooth_velocity, target_angle, rotation_angle,
-        dist_to_ground, dodge_time;
+        dist_to_ground;
     private Vector3 direction, move_dir, height_dir;
-    private bool is_moving, is_walking, is_sprinting, press_dodge, press_jump, is_grounded, is_locked, press_block; // animator variables
+    private bool is_moving, is_walking, is_sprinting, is_dodge_pressed, is_jump_pressed, is_grounded, is_locked, is_block_pressed,
+        is_dodging, is_blocking, is_jumping; // animator variables
     private bool no_movement; // variable for situations where I don't want the character to be able to move
 
     private void Start() {
@@ -24,7 +25,6 @@ public class PlayerScript : MonoBehaviour
         dist_to_ground = controller.bounds.extents.y;
         is_locked = false;
         height_dir = Vector3.zero;
-        dodge_time = 0f;
     }
 
     private bool IsGrounded() {
@@ -38,7 +38,8 @@ public class PlayerScript : MonoBehaviour
 
         // character faces the direction it's moving to
         target_angle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
-        rotation_angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, target_angle, ref turn_smooth_velocity, turn_smoothness);
+        rotation_angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, target_angle, ref turn_smooth_velocity, turn_smoothness *
+            System.Convert.ToSingle(!is_dodge_pressed) + 0.1f);
         is_moving = direction.magnitude > 0f;
         if (is_moving && !no_movement)
             transform.rotation = Quaternion.Euler(0f, rotation_angle, 0f);
@@ -51,18 +52,6 @@ public class PlayerScript : MonoBehaviour
         is_sprinting = is_sprinting && is_moving && !is_walking;
     }
 
-    private void Dodge() // directional dodge is dash, no direction is jump
-    {
-        press_dodge = Input.GetButtonDown("Dodge") && is_grounded && dodge_time <= Time.time && !anim.GetCurrentAnimatorStateInfo(0).IsName("Parrying");
-        press_jump = press_dodge && !is_moving;
-        if (press_jump) {
-            height_dir.y += jump_height;
-            dodge_time = jump_cooldown + Time.time;
-        }
-        else if (press_dodge)
-            dodge_time = dodge_cooldown + Time.time;
-    }
-
     private void Fall()
     {
         anim.applyRootMotion = is_grounded;
@@ -72,7 +61,17 @@ public class PlayerScript : MonoBehaviour
             height_dir.y = 0f;
     }
 
-    public float atk_force, atk_side, atk_height; // temp
+    private void Action()
+    {
+        is_dodge_pressed = Input.GetButtonDown("Dodge") && is_grounded && !is_dodging && !is_blocking && !is_jumping;
+        is_jump_pressed = is_dodge_pressed && !is_moving && !is_dodging && !is_blocking && !is_jumping;
+        if (is_jump_pressed)
+            height_dir.y += jump_height;
+        is_block_pressed = is_grounded && Input.GetButtonDown("Block") && !is_dodge_pressed && !is_dodging && !is_blocking && !is_jumping;
+    }
+
+    public float atk_side; // temp
+    public bool parry_success, parry_late; // temp
     private void Animation()
     {
         anim.SetFloat("speed", speed);
@@ -82,31 +81,34 @@ public class PlayerScript : MonoBehaviour
         anim.SetBool("is_moving", is_moving);
         anim.SetBool("is_walking", is_walking);
         anim.SetBool("is_sprinting", is_sprinting);
-        anim.SetBool("press_dodge", press_dodge);
-        anim.SetBool("press_jump", press_jump);
+        anim.SetBool("is_dodge_pressed", is_dodge_pressed);
+        anim.SetBool("is_jump_pressed", is_jump_pressed);
         anim.SetBool("is_grounded", is_grounded);
-        anim.SetBool("press_block", press_block);
+        anim.SetBool("is_block_pressed", is_block_pressed);
 
-        anim.SetFloat("atk_force", atk_force); // temp
         anim.SetFloat("atk_side", atk_side); // temp
-        anim.SetFloat("atk_height", atk_height); // temp
+        anim.SetBool("parry_success", parry_success); // temp
+        anim.SetBool("parry_late", parry_late); // temp
     }
 
     void Update()
     {
         is_grounded = IsGrounded();
-        no_movement = anim.GetCurrentAnimatorStateInfo(0).IsName("Unlocked.Sprinting Stop") || 
-            anim.GetCurrentAnimatorStateInfo(0).IsName("Landing") || anim.GetCurrentAnimatorStateInfo(0).IsName("Rolling")
-            || anim.GetCurrentAnimatorStateInfo(0).IsName("Parrying");
-        press_block = is_grounded && Input.GetButtonDown("Block") && !anim.GetCurrentAnimatorStateInfo(0).IsName("Rolling");
+        is_dodging = anim.GetCurrentAnimatorStateInfo(0).IsName("Rolling");
+        is_blocking = anim.GetCurrentAnimatorStateInfo(0).IsName("Parrying.Parrying Base") ||
+            anim.GetCurrentAnimatorStateInfo(0).IsName("Parrying.Parrying Success") ||
+            anim.GetCurrentAnimatorStateInfo(0).IsName("Parrying.Parrying Late");
+        is_jumping = anim.GetCurrentAnimatorStateInfo(0).IsName("Jumping") ||
+            anim.GetCurrentAnimatorStateInfo(0).IsName("Landing");
+        no_movement = anim.GetCurrentAnimatorStateInfo(0).IsName("Unlocked.Sprinting Stop")  || is_dodging || is_blocking || is_jumping;
 
         // basic input
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
         direction.Set(horizontal, 0f, vertical);
 
+        Action();
         UnlockedMovement();
-        Dodge();
         Fall();
         Animation();
 
