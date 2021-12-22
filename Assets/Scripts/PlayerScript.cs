@@ -69,7 +69,7 @@ public class PlayerScript : MonoBehaviour
         is_jump_pressed = Input.GetButtonDown("Dodge") && is_grounded && !is_dodging && !is_blocking && !is_jumping && !is_moving && !is_attacking;
         if (is_jump_pressed)
             height_dir.y += jump_height;
-        is_block_pressed = is_grounded && Input.GetButtonDown("Block") && !is_dodging && !is_blocking && !is_jumping && !is_attacking;
+        is_block_pressed = is_grounded && Input.GetButtonDown("Block") && !is_dodging && !is_blocking && !is_jumping;
         is_attack1_pressed = Input.GetButtonDown("Attack1") && !is_dodging && !is_blocking;
     }
 
@@ -83,14 +83,17 @@ public class PlayerScript : MonoBehaviour
         anim.SetBool("is_walking", is_walking);
         anim.SetBool("is_sprinting", is_sprinting);
         anim.SetBool("is_dodge_pressed", is_dodge_pressed);
+        anim.SetBool("is_dodging", is_dodging);
         anim.SetBool("is_jump_pressed", is_jump_pressed);
+        anim.SetBool("is_jumping", is_jumping);
+        anim.SetBool("is_landing", is_landing);
         anim.SetBool("is_grounded", is_grounded);
         anim.SetBool("is_block_pressed", is_block_pressed);
+        anim.SetBool("is_blocking", is_blocking);
         anim.SetBool("is_attack1_pressed", is_attack1_pressed);
         anim.SetBool("is_attacking", is_attacking);
-
-        anim.SetFloat("atk_side", atk_side); // temp
-        anim.SetBool("parry_late", parry_late); // temp
+        anim.SetFloat("atk_side", atk_side);
+        anim.SetBool("parry_late", parry_late);
     }
 
     void Update()
