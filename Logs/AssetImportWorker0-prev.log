@@ -1,0 +1,1475 @@
+Using pre-set license
+Built from '2020.3/staging' branch; Version is '2020.3.20f1 (41c4e627c95f) revision 4310246'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Pro; OS build 19043.1415; Version 2009; 64bit' Language: 'en' Physical Memory: 16334 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2020.3.20f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/Users/ggarr/BossFight
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+61631
+Successfully changed project path to: C:/Users/ggarr/BossFight
+C:/Users/ggarr/BossFight
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 39.62 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.20f1 (41c4e627c95f)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.20f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/ggarr/BossFight/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 970 (ID=0x13c2)
+    Vendor:   
+    VRAM:     4043 MB
+    Driver:   30.0.14.9709
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.20f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.20f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.20f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56220
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.20f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.002737 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 37.10 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.385 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1386ms)
+		BeginReloadAssembly (67ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (494ms)
+			LoadAssemblies (64ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (184ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (35ms)
+			SetupLoadedEditorAssemblies (187ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (7ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (37ms)
+				BeforeProcessingInitializeOnLoad (18ms)
+				ProcessInitializeOnLoadAttributes (85ms)
+				ProcessInitializeOnLoadMethodAttributes (40ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.003862 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.46 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.249 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1250ms)
+		BeginReloadAssembly (173ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (8ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (21ms)
+		EndReloadAssembly (991ms)
+			LoadAssemblies (120ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (308ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (52ms)
+			SetupLoadedEditorAssemblies (394ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (107ms)
+				ProcessInitializeOnLoadAttributes (266ms)
+				ProcessInitializeOnLoadMethodAttributes (5ms)
+				AfterProcessingInitializeOnLoad (10ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
+Refreshing native plugins compatible for Editor in 0.36 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1551 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 72.0 MB.
+System memory in use after: 72.0 MB.
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 1987.
+Total: 3.082000 ms (FindLiveObjects: 0.163800 ms CreateObjectMapping: 0.041300 ms MarkObjects: 2.800600 ms  DeleteObjects: 0.075300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  path: Assets/Animators
+  artifactKey: Guid(5bf6bab312a92a24d9c631a038a3e06d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animators using Guid(5bf6bab312a92a24d9c631a038a3e06d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fcf01392ff707a25e90d5b0a08453385') in 0.009302 seconds 
+  Import took 0.012559 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000192 seconds.
+  path: Assets/Kubold
+  artifactKey: Guid(42c8b3d62d4fe544eb67e4667596f6f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold using Guid(42c8b3d62d4fe544eb67e4667596f6f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d35a934cb3dc6225ebd2a1a7056af43') in 0.010434 seconds 
+  Import took 0.013468 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000208 seconds.
+  path: Assets/Kubold/LongswordAnimsetPro
+  artifactKey: Guid(457adb33692a53a4f8e389f110d14bfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/LongswordAnimsetPro using Guid(457adb33692a53a4f8e389f110d14bfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '718eb4911cc3e271cd3625477fa9f9dd') in 0.009396 seconds 
+  Import took 0.012861 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.203077 seconds.
+  path: Assets/Scripts
+  artifactKey: Guid(9d2c14be82fe57b44860901d743bd3b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts using Guid(9d2c14be82fe57b44860901d743bd3b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd57264a6cf83d1deb4d30a342ce7a07f') in 0.007020 seconds 
+  Import took 0.009944 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.947721 seconds.
+  path: Assets/Scripts/PlayerScript.cs
+  artifactKey: Guid(c93008c4f08586d42ac7ed536aba8d76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/PlayerScript.cs using Guid(c93008c4f08586d42ac7ed536aba8d76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fff2a5d2b989b9b343644ac8319f9736') in 0.021309 seconds 
+  Import took 0.024258 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.230834 seconds.
+  path: Assets/Kubold/LongswordAnimsetPro/Animations/Longs_Addit.fbx
+  artifactKey: Guid(ca722611829c0b04bb0efba6f85a9bd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/LongswordAnimsetPro/Animations/Longs_Addit.fbx using Guid(ca722611829c0b04bb0efba6f85a9bd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5db2deeab73576819ec81c1e627ce76c') in 0.528916 seconds 
+  Import took 0.534458 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000253 seconds.
+  path: Assets/Kubold/LongswordAnimsetPro/Animations/Update/LongswordAnimsetPro_Update_pt4.fbx
+  artifactKey: Guid(b198a6ab6b6c4004792420f5a6eb82e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/LongswordAnimsetPro/Animations/Update/LongswordAnimsetPro_Update_pt4.fbx using Guid(b198a6ab6b6c4004792420f5a6eb82e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22f3be08fe72baf823e9ca90af5b5a77') in 0.100116 seconds 
+  Import took 0.104822 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000181 seconds.
+  path: Assets/Kubold/LongswordAnimsetPro/Animations/Longsword_Animset_pt4.fbx
+  artifactKey: Guid(c5937c944a220444aa33be3fe1480174) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/LongswordAnimsetPro/Animations/Longsword_Animset_pt4.fbx using Guid(c5937c944a220444aa33be3fe1480174) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '55b76cb025bdb55d13964185d9c26084') in 0.117169 seconds 
+  Import took 0.122100 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000183 seconds.
+  path: Assets/Kubold/LongswordAnimsetPro/Animations/Longsword_Animset_pt1.fbx
+  artifactKey: Guid(7c3c4d895ee89ce43b0e1138cc8994e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/LongswordAnimsetPro/Animations/Longsword_Animset_pt1.fbx using Guid(7c3c4d895ee89ce43b0e1138cc8994e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f08879c2c2df12331160ce62616067b4') in 0.281009 seconds 
+  Import took 0.287006 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000261 seconds.
+  path: Assets/Kubold/LongswordAnimsetPro/Animations/Update/Finisher_RU_Attacker.fbx
+  artifactKey: Guid(b919cbd75a4e22b47bcf0c8c37b6d751) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/LongswordAnimsetPro/Animations/Update/Finisher_RU_Attacker.fbx using Guid(b919cbd75a4e22b47bcf0c8c37b6d751) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f5931665e3e71aa8287b37eff3dddabe') in 0.074887 seconds 
+  Import took 0.078664 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000171 seconds.
+  path: Assets/Kubold/LongswordAnimsetPro/Animations/Longsword_Animset_pt2.fbx
+  artifactKey: Guid(fb07a934dbc1969468121112ca048964) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/LongswordAnimsetPro/Animations/Longsword_Animset_pt2.fbx using Guid(fb07a934dbc1969468121112ca048964) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '83a3438236f496fb841fc42b72d1ac67') in 0.142042 seconds 
+  Import took 0.147036 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000184 seconds.
+  path: Assets/Kubold/LongswordAnimsetPro/Animations/Longsword_Animset_pt3.fbx
+  artifactKey: Guid(1bdc2ef74b0fc8b459c915473007e656) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/LongswordAnimsetPro/Animations/Longsword_Animset_pt3.fbx using Guid(1bdc2ef74b0fc8b459c915473007e656) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a079b0207fda6682c12985617f1c266d') in 0.160633 seconds 
+  Import took 0.167333 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000189 seconds.
+  path: Assets/Kubold/LongswordAnimsetPro/Animations/Update/LongswordAnimsetPro_Update_pt2.fbx
+  artifactKey: Guid(af2aa3a4c7f4c1e4abf5c9a667a780ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/LongswordAnimsetPro/Animations/Update/LongswordAnimsetPro_Update_pt2.fbx using Guid(af2aa3a4c7f4c1e4abf5c9a667a780ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '85eab7febdc8288a896d99b0bdc62184') in 0.085864 seconds 
+  Import took 0.090343 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.346381 seconds.
+  path: Assets/Kubold/SwordAnimsetPro/2xAttack_Move_med_halfsword_R_L.fbx
+  artifactKey: Guid(2b365d3c207f7d34280c9f041b2afba1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/SwordAnimsetPro/2xAttack_Move_med_halfsword_R_L.fbx using Guid(2b365d3c207f7d34280c9f041b2afba1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'facafac05b01ae27b92e3e20a0c5efd8') in 0.394780 seconds 
+  Import took 0.398810 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000172 seconds.
+  path: Assets/Kubold/SwordAnimsetPro/2xAttack_Move_med_Rlow_Lhi_1.fbx
+  artifactKey: Guid(8f6005e92a88b294e81dd5a3696d4dd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/SwordAnimsetPro/2xAttack_Move_med_Rlow_Lhi_1.fbx using Guid(8f6005e92a88b294e81dd5a3696d4dd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e50de22a6d6ab0f4d7122f143b561408') in 0.123841 seconds 
+  Import took 0.127175 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000190 seconds.
+  path: Assets/Kubold/SwordAnimsetPro/Attack_Move_fast_Rdown_1.fbx
+  artifactKey: Guid(09c0d62c4e3533e4bbbfa162e85ee8ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/SwordAnimsetPro/Attack_Move_fast_Rdown_1.fbx using Guid(09c0d62c4e3533e4bbbfa162e85ee8ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20c7116c0197e95a3b60d9f0118713ba') in 0.120305 seconds 
+  Import took 0.123929 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000149 seconds.
+  path: Assets/Kubold/SwordAnimsetPro/Attack_Move_med_T_1.fbx
+  artifactKey: Guid(e9b875e306c816e49988c7e170a8af47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/SwordAnimsetPro/Attack_Move_med_T_1.fbx using Guid(e9b875e306c816e49988c7e170a8af47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8951c29bd14de53941c7832de8178a52') in 0.120016 seconds 
+  Import took 0.123434 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000212 seconds.
+  path: Assets/Kubold/SwordAnimsetPro/Attack_Move_slow_T_2.fbx
+  artifactKey: Guid(65e89ec913e8d194c825a86d4efc7344) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/SwordAnimsetPro/Attack_Move_slow_T_2.fbx using Guid(65e89ec913e8d194c825a86d4efc7344) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6fe30ed43fd5e188682775bfc3f12a85') in 0.125356 seconds 
+  Import took 0.129117 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000173 seconds.
+  path: Assets/Kubold/SwordAnimsetPro/Attack_Move_med_L_1.fbx
+  artifactKey: Guid(a1cbf1cbd36ee9c4a8ef296ce00d37b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/SwordAnimsetPro/Attack_Move_med_L_1.fbx using Guid(a1cbf1cbd36ee9c4a8ef296ce00d37b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd58c1cb3c5836eb36d9d52f441dbbb0') in 0.126781 seconds 
+  Import took 0.130017 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000169 seconds.
+  path: Assets/Kubold/SwordAnimsetPro/Attack_Move_slow_whirl_L_2.fbx
+  artifactKey: Guid(8e3843905326ae341be2cbc63a50767a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/SwordAnimsetPro/Attack_Move_slow_whirl_L_2.fbx using Guid(8e3843905326ae341be2cbc63a50767a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b976cd1261ce285c4b5409fcb70fcb9d') in 0.125360 seconds 
+  Import took 0.128824 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000184 seconds.
+  path: Assets/Kubold/SwordAnimsetPro/2xAttack_Place_med_Rdown_Rdown_1.fbx
+  artifactKey: Guid(a5fb3dc6731325843950b3d817b77bd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/SwordAnimsetPro/2xAttack_Place_med_Rdown_Rdown_1.fbx using Guid(a5fb3dc6731325843950b3d817b77bd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '214a25be394dcdea7281933d72c35ef9') in 0.119367 seconds 
+  Import took 0.122935 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000272 seconds.
+  path: Assets/Kubold/SwordAnimsetPro/Attack_Move_med_Rhigh_1.fbx
+  artifactKey: Guid(1ae37c97d3469474bbf9ae075d0eb271) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/SwordAnimsetPro/Attack_Move_med_Rhigh_1.fbx using Guid(1ae37c97d3469474bbf9ae075d0eb271) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c7d28cce36c7f504a1870898ef42edcb') in 0.116635 seconds 
+  Import took 0.120168 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000220 seconds.
+  path: Assets/Kubold/LongswordAnimsetPro/Animations/Update/Finisher_RU_Victim.fbx
+  artifactKey: Guid(294d6e413a222054493ddf0adc240e84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/LongswordAnimsetPro/Animations/Update/Finisher_RU_Victim.fbx using Guid(294d6e413a222054493ddf0adc240e84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5952e04f9cc9f5206edd3202376843e2') in 0.074742 seconds 
+  Import took 0.077995 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000182 seconds.
+  path: Assets/Kubold/SwordAnimsetPro/Attack_Place_fast_Llow_1.fbx
+  artifactKey: Guid(7cd8daa270f0eb64c952576574169dd5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/SwordAnimsetPro/Attack_Place_fast_Llow_1.fbx using Guid(7cd8daa270f0eb64c952576574169dd5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce00423938609abe4f43439558a3c925') in 0.114640 seconds 
+  Import took 0.118468 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000180 seconds.
+  path: Assets/Kubold/SwordAnimsetPro/2xAttack_Place_fast_Ldwon_Rdown_1.fbx
+  artifactKey: Guid(8724776305420b8489442d82bb5c9046) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/SwordAnimsetPro/2xAttack_Place_fast_Ldwon_Rdown_1.fbx using Guid(8724776305420b8489442d82bb5c9046) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a9c05fa7b0657c2f105ebaea8ea046a1') in 0.117398 seconds 
+  Import took 0.120837 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000174 seconds.
+  path: Assets/Kubold/SwordAnimsetPro/Attack_Move_fast_Pommel.fbx
+  artifactKey: Guid(5a8cb3faadd26c241858bb7c33cd6ad9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/SwordAnimsetPro/Attack_Move_fast_Pommel.fbx using Guid(5a8cb3faadd26c241858bb7c33cd6ad9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3cb492c1ee26350a08d08ff1eba29da1') in 0.118158 seconds 
+  Import took 0.121824 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000175 seconds.
+  path: Assets/Kubold/SwordAnimsetPro/Attack_Move_med_Lhi_1.fbx
+  artifactKey: Guid(5b72bc0754f747942bcfe73b412774de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/SwordAnimsetPro/Attack_Move_med_Lhi_1.fbx using Guid(5b72bc0754f747942bcfe73b412774de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '253014035adbeefd7764cd787cbd44f2') in 0.122062 seconds 
+  Import took 0.125506 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000163 seconds.
+  path: Assets/Kubold/SwordAnimsetPro/Attack_Move_med_Rdown_1.fbx
+  artifactKey: Guid(7b23d1b31ba0d714498c7b44dcb12466) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/SwordAnimsetPro/Attack_Move_med_Rdown_1.fbx using Guid(7b23d1b31ba0d714498c7b44dcb12466) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b07433efc6db21301270de75aa602c29') in 0.121278 seconds 
+  Import took 0.124614 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000170 seconds.
+  path: Assets/Kubold/SwordAnimsetPro/Attack_Move_slow_L_1.fbx
+  artifactKey: Guid(77e24a3cf063caf45bfc9a8bb819bc19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/SwordAnimsetPro/Attack_Move_slow_L_1.fbx using Guid(77e24a3cf063caf45bfc9a8bb819bc19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'deb4074ec3b6d30ec610c68dd4e3d40e') in 0.124369 seconds 
+  Import took 0.127899 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000199 seconds.
+  path: Assets/Kubold/SwordAnimsetPro/Attack_Move_slow_Rdown_1.fbx
+  artifactKey: Guid(e59de93fad309d14a93f184e96f97f67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/SwordAnimsetPro/Attack_Move_slow_Rdown_1.fbx using Guid(e59de93fad309d14a93f184e96f97f67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c104de45d6225dbc0115c3af9edfdff8') in 0.121992 seconds 
+  Import took 0.125570 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000178 seconds.
+  path: Assets/Kubold/SwordAnimsetPro/Attack_Move_slow_whirl_L_1.fbx
+  artifactKey: Guid(4ed328375bdc8d646833a8acfc4a9eae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/SwordAnimsetPro/Attack_Move_slow_whirl_L_1.fbx using Guid(4ed328375bdc8d646833a8acfc4a9eae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a8bfff5354f0fff8b530617a3cd9729e') in 0.119776 seconds 
+  Import took 0.123657 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000211 seconds.
+  path: Assets/Kubold/SwordAnimsetPro/Attack_Move_Achilles.fbx
+  artifactKey: Guid(07e3e93c3f5ad6a4e84aeb07e7d33427) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/SwordAnimsetPro/Attack_Move_Achilles.fbx using Guid(07e3e93c3f5ad6a4e84aeb07e7d33427) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b1efab72d0a16d0bec8b68b8851f8979') in 0.125078 seconds 
+  Import took 0.128751 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000185 seconds.
+  path: Assets/Kubold/SwordAnimsetPro/Attack_Move_slow_Lup.fbx
+  artifactKey: Guid(7aae4195d1959d74ca2f13607e7ddeed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/SwordAnimsetPro/Attack_Move_slow_Lup.fbx using Guid(7aae4195d1959d74ca2f13607e7ddeed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9539ebc9d439183bf4a6398474f65d9d') in 0.124076 seconds 
+  Import took 0.128204 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000189 seconds.
+  path: Assets/Kubold/SwordAnimsetPro/Attack_Move_strong_Ldown_1.fbx
+  artifactKey: Guid(5de86916ab3d90144900c389910c3a98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/SwordAnimsetPro/Attack_Move_strong_Ldown_1.fbx using Guid(5de86916ab3d90144900c389910c3a98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '55a9165de80d60b9af103c06fa076ccf') in 0.120048 seconds 
+  Import took 0.123259 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000198 seconds.
+  path: Assets/Kubold/SwordAnimsetPro/Attack_Move_snap_Point.fbx
+  artifactKey: Guid(fef0d93e821944f458ed5e503c29eac1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/SwordAnimsetPro/Attack_Move_snap_Point.fbx using Guid(fef0d93e821944f458ed5e503c29eac1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82a96b99dc44f0073eebe49bfc9bd9f2') in 0.123142 seconds 
+  Import took 0.126335 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000176 seconds.
+  path: Assets/Kubold/SwordAnimsetPro/Attack_Place_fast_Ldown_1.fbx
+  artifactKey: Guid(753ae029dedc71c45ba981a15a64e9fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/SwordAnimsetPro/Attack_Place_fast_Ldown_1.fbx using Guid(753ae029dedc71c45ba981a15a64e9fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'caa0a72bbdd6e92ed91796db2c115588') in 0.121504 seconds 
+  Import took 0.124855 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000214 seconds.
+  path: Assets/Kubold/SwordAnimsetPro/Attack_Move_med_Ldown_1.fbx
+  artifactKey: Guid(599f12be30fe82f4681e14215d57e802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/SwordAnimsetPro/Attack_Move_med_Ldown_1.fbx using Guid(599f12be30fe82f4681e14215d57e802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b1ed5333f6752c03f04ade7cd11c828f') in 0.125430 seconds 
+  Import took 0.128872 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000171 seconds.
+  path: Assets/Kubold/SwordAnimsetPro/Attack_Move_med_Rlow_1.fbx
+  artifactKey: Guid(06a6b8b1f5aed484b87a6dcaf625ca5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/SwordAnimsetPro/Attack_Move_med_Rlow_1.fbx using Guid(06a6b8b1f5aed484b87a6dcaf625ca5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27d3be6c59c870bd9d872df38ecfb907') in 0.119089 seconds 
+  Import took 0.122700 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000198 seconds.
+  path: Assets/Kubold/SwordAnimsetPro/Attack_Move_fast_T_1.fbx
+  artifactKey: Guid(3674c60bf96ab0b44a4a063d62b7fcde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/SwordAnimsetPro/Attack_Move_fast_T_1.fbx using Guid(3674c60bf96ab0b44a4a063d62b7fcde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '28e5c5416ef45229b92ee839c4882d48') in 0.121104 seconds 
+  Import took 0.125184 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000173 seconds.
+  path: Assets/Kubold/SwordAnimsetPro/Attack_Jump_T.fbx
+  artifactKey: Guid(b3c60c6cb3dee0b45a4b283acc96fd35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/SwordAnimsetPro/Attack_Jump_T.fbx using Guid(b3c60c6cb3dee0b45a4b283acc96fd35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '529353cad2de8cacf3d331949d6825bf') in 0.121783 seconds 
+  Import took 0.125288 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000236 seconds.
+  path: Assets/Kubold/SwordAnimsetPro/Attack_Move_med_Rdown_2.fbx
+  artifactKey: Guid(ad56b4eeea0f12e4a885d669a80db24f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/SwordAnimsetPro/Attack_Move_med_Rdown_2.fbx using Guid(ad56b4eeea0f12e4a885d669a80db24f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9382d6e09cc58412e646ec20730b1343') in 0.121747 seconds 
+  Import took 0.125180 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000185 seconds.
+  path: Assets/Kubold/SwordAnimsetPro/Attack_Move_fast_Rlow_1.fbx
+  artifactKey: Guid(e57b386ec00bf8543942e04b5c98528d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/SwordAnimsetPro/Attack_Move_fast_Rlow_1.fbx using Guid(e57b386ec00bf8543942e04b5c98528d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f002543b4ef300c4535adeee0fe31557') in 0.119616 seconds 
+  Import took 0.123158 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000209 seconds.
+  path: Assets/Kubold/SwordAnimsetPro/Attack_Move_med_Kick.fbx
+  artifactKey: Guid(5599ae56a7ff3d941bda0efcc2cbd489) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/SwordAnimsetPro/Attack_Move_med_Kick.fbx using Guid(5599ae56a7ff3d941bda0efcc2cbd489) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7be20b224207204e872fa46e62f2b009') in 0.126736 seconds 
+  Import took 0.130333 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000166 seconds.
+  path: Assets/Kubold/SwordAnimsetPro/Attack_Move_med_Ldown_2.fbx
+  artifactKey: Guid(54a124b4e50b6e24fb8748d08173cde0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/SwordAnimsetPro/Attack_Move_med_Ldown_2.fbx using Guid(54a124b4e50b6e24fb8748d08173cde0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a23ba42aa094608cbde787e8d916f1e3') in 0.122801 seconds 
+  Import took 0.126607 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000179 seconds.
+  path: Assets/Kubold/SwordAnimsetPro/Attack_Move_strong_Rdown_1.fbx
+  artifactKey: Guid(54fb5a50231a59d4d97d826c4dd25fb1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/SwordAnimsetPro/Attack_Move_strong_Rdown_1.fbx using Guid(54fb5a50231a59d4d97d826c4dd25fb1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e0afd0ed6d7e6c454d5fb990544942a3') in 0.116705 seconds 
+  Import took 0.120412 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000197 seconds.
+  path: Assets/Kubold/SwordAnimsetPro/Attack_Move_slow_Backtrick.fbx
+  artifactKey: Guid(4bda382b2e1fa4d46b815b27f3ddea15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/SwordAnimsetPro/Attack_Move_slow_Backtrick.fbx using Guid(4bda382b2e1fa4d46b815b27f3ddea15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd6a707e43f9e170e3d6c06de565a52e2') in 0.124831 seconds 
+  Import took 0.128452 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000178 seconds.
+  path: Assets/Kubold/SwordAnimsetPro/2xAttack_Move_med_whirl_Rhi_Rhi_1.fbx
+  artifactKey: Guid(2a5ad1ec24e1a234cb7ac98cdd2f7612) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/SwordAnimsetPro/2xAttack_Move_med_whirl_Rhi_Rhi_1.fbx using Guid(2a5ad1ec24e1a234cb7ac98cdd2f7612) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2924b62af8071d8d44f27482849bb717') in 0.119268 seconds 
+  Import took 0.122583 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000192 seconds.
+  path: Assets/Kubold/SwordAnimsetPro/Attack_Move_slow_T_1.fbx
+  artifactKey: Guid(eca5eedb713a3e34cb046e5a6eacdd56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/SwordAnimsetPro/Attack_Move_slow_T_1.fbx using Guid(eca5eedb713a3e34cb046e5a6eacdd56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '604e4cbbf98c620ce6f3a0393fec05d7') in 0.125303 seconds 
+  Import took 0.128396 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000164 seconds.
+  path: Assets/Kubold/SwordAnimsetPro/2xAttack_Move_med_Rdown_L_1.fbx
+  artifactKey: Guid(0c639581bf98c12428b5d1e2b977494c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/SwordAnimsetPro/2xAttack_Move_med_Rdown_L_1.fbx using Guid(0c639581bf98c12428b5d1e2b977494c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '948864ccb6ac6e24d30bab4f7fe54d8d') in 0.120996 seconds 
+  Import took 0.124827 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7028.979975 seconds.
+  path: Assets/Kubold/LongswordAnimsetPro/Animations/Vamp_FaceAnims.fbx
+  artifactKey: Guid(98b79c93cfefa8540aaa77d94c558ed9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/LongswordAnimsetPro/Animations/Vamp_FaceAnims.fbx using Guid(98b79c93cfefa8540aaa77d94c558ed9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa0dcf54aaecaaed56c884a062b880b9') in 0.141872 seconds 
+  Import took 0.194968 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 15.888263 seconds.
+  path: Assets/Kubold/LongswordAnimsetPro/Animations/Update
+  artifactKey: Guid(cdc7205b39cf79347895aa4cda089df0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/LongswordAnimsetPro/Animations/Update using Guid(cdc7205b39cf79347895aa4cda089df0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e2f5cfda663979e3e2025b0140b573bf') in 0.009200 seconds 
+  Import took 0.012751 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.034771 seconds.
+  path: Assets/Kubold/LongswordAnimsetPro/Animations/Update/LongswordAnimsetPro_Update_pt1.fbx
+  artifactKey: Guid(6998358787dba6247af58374d3800986) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/LongswordAnimsetPro/Animations/Update/LongswordAnimsetPro_Update_pt1.fbx using Guid(6998358787dba6247af58374d3800986) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0108a0f81c0b05cf067d599fe8359c00') in 0.110122 seconds 
+  Import took 0.114147 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000172 seconds.
+  path: Assets/Kubold/LongswordAnimsetPro/Animations/Update/LongswordAnimsetPro_Update_pt3.fbx
+  artifactKey: Guid(8ab664a6d3a3af74d95339ebd2583f12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/LongswordAnimsetPro/Animations/Update/LongswordAnimsetPro_Update_pt3.fbx using Guid(8ab664a6d3a3af74d95339ebd2583f12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9930e2855c068abb78c7b80ecbc0249') in 0.106250 seconds 
+  Import took 0.110655 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 276.684389 seconds.
+  path: Assets/Kubold/LongswordAnimsetPro/Models/DaggerSword/Longsword.fbx
+  artifactKey: Guid(c7fb57da2b8a36643a6cb1e70178a745) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/LongswordAnimsetPro/Models/DaggerSword/Longsword.fbx using Guid(c7fb57da2b8a36643a6cb1e70178a745) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a0603cb12bd07692104903c33242d250') in 0.120622 seconds 
+  Import took 0.123963 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 36.491911 seconds.
+  path: Assets/Kubold/MovementAnimsetPro/Models/Character.fbx
+  artifactKey: Guid(d98beda61bc449349a1c4e214c8bdec9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/MovementAnimsetPro/Models/Character.fbx using Guid(d98beda61bc449349a1c4e214c8bdec9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c9c5f41320b3ffb27f670cabab0f33a') in 0.437429 seconds 
+  Import took 0.442124 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000191 seconds.
+  path: Assets/Kubold/MovementAnimsetPro/Animations/MovementAnimsetPro_Additionals.fbx
+  artifactKey: Guid(72bc559d4b44eb14bb687cefb4d1c638) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/MovementAnimsetPro/Animations/MovementAnimsetPro_Additionals.fbx using Guid(72bc559d4b44eb14bb687cefb4d1c638) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d7a549161fe45373e9aafc3de36da82') in 0.056912 seconds 
+  Import took 0.061876 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000180 seconds.
+  path: Assets/Kubold/SwordAnimsetPro/Sword1h_Holster.fbx
+  artifactKey: Guid(c81ccd581aafa084a9351fd52f85cc3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/SwordAnimsetPro/Sword1h_Holster.fbx using Guid(c81ccd581aafa084a9351fd52f85cc3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '445e42aafa95c1f5b0cbce72a7ee452c') in 0.126728 seconds 
+  Import took 0.130261 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000192 seconds.
+  path: Assets/Kubold/SwordAnimsetPro/Sword1h_Taunt_wheels.fbx
+  artifactKey: Guid(ae1fe3d67edaeda44842a26f899b1847) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/SwordAnimsetPro/Sword1h_Taunt_wheels.fbx using Guid(ae1fe3d67edaeda44842a26f899b1847) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b28ea38f67cd1add114709cfd0cc8c0') in 0.120482 seconds 
+  Import took 0.123960 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 403.588477 seconds.
+  path: Assets/Kubold/SwordAnimsetPro/Attack_Place_fast_Lup_1.fbx
+  artifactKey: Guid(e76aa64d5116a9341b97b54b96743faf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/SwordAnimsetPro/Attack_Place_fast_Lup_1.fbx using Guid(e76aa64d5116a9341b97b54b96743faf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd99e423b508b89da0336c5c45c40055') in 0.136867 seconds 
+  Import took 0.141413 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000210 seconds.
+  path: Assets/Kubold/SwordAnimsetPro/Attack_Place_med_R_2.fbx
+  artifactKey: Guid(fe3cfda444ee0eb478b125044d59d303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/SwordAnimsetPro/Attack_Place_med_R_2.fbx using Guid(fe3cfda444ee0eb478b125044d59d303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e0d64087c3140063d684bfb71df1e88') in 0.130076 seconds 
+  Import took 0.134076 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000176 seconds.
+  path: Assets/Kubold/SwordAnimsetPro/Attack_Place_snap_R_1.fbx
+  artifactKey: Guid(0aa3b3186fdb3b548bc32ce9d05e41c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/SwordAnimsetPro/Attack_Place_snap_R_1.fbx using Guid(0aa3b3186fdb3b548bc32ce9d05e41c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a6d8ca58015f748975da243be6bd7d16') in 0.129974 seconds 
+  Import took 0.133648 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000180 seconds.
+  path: Assets/Kubold/SwordAnimsetPro/Attack_Place_med_R_1.fbx
+  artifactKey: Guid(4ccbb1f9c07107844b326d9236ee397d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/SwordAnimsetPro/Attack_Place_med_R_1.fbx using Guid(4ccbb1f9c07107844b326d9236ee397d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '26bc9e32fc449d47a1370aa53aeca928') in 0.128890 seconds 
+  Import took 0.132331 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000238 seconds.
+  path: Assets/Kubold/SwordAnimsetPro/Attack_Place_snap_T_1.fbx
+  artifactKey: Guid(368d1da78133c124d89de5f6e01cb7bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/SwordAnimsetPro/Attack_Place_snap_T_1.fbx using Guid(368d1da78133c124d89de5f6e01cb7bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '928ea7f14f99072d34dd8514acf8e341') in 0.131930 seconds 
+  Import took 0.135462 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000188 seconds.
+  path: Assets/Kubold/SwordAnimsetPro/Attack_Place_snap_Ldown_2.fbx
+  artifactKey: Guid(163124ca9da4c9f4e8cd2e8f04446837) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/SwordAnimsetPro/Attack_Place_snap_Ldown_2.fbx using Guid(163124ca9da4c9f4e8cd2e8f04446837) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05b2b3f351e04b717e911c1a5a42decc') in 0.132833 seconds 
+  Import took 0.136631 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000237 seconds.
+  path: Assets/Kubold/SwordAnimsetPro/Attack_Place_fast_T_1.fbx
+  artifactKey: Guid(d8532dd557801c045a584a52b78a4e37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/SwordAnimsetPro/Attack_Place_fast_T_1.fbx using Guid(d8532dd557801c045a584a52b78a4e37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed97700b8eeb091fe3e222496ef493e5') in 0.132201 seconds 
+  Import took 0.136212 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000182 seconds.
+  path: Assets/Kubold/SwordAnimsetPro/Attack_Place_slow_Ldown_1.fbx
+  artifactKey: Guid(950680f9ef31694408d0626282ab1352) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/SwordAnimsetPro/Attack_Place_slow_Ldown_1.fbx using Guid(950680f9ef31694408d0626282ab1352) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0032b003d0b9b095af76762a68dd8bbc') in 0.131153 seconds 
+  Import took 0.134889 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000200 seconds.
+  path: Assets/Kubold/SwordAnimsetPro/Attack_Run_Achilles.fbx
+  artifactKey: Guid(b5fe3ba3e69fe644d93a5010ef3679b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/SwordAnimsetPro/Attack_Run_Achilles.fbx using Guid(b5fe3ba3e69fe644d93a5010ef3679b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27e7808cfa4cd60e284d83d1077444d2') in 0.131240 seconds 
+  Import took 0.134618 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000232 seconds.
+  path: Assets/Kubold/SwordAnimsetPro/Attack_Place_fast_Rdown_1.fbx
+  artifactKey: Guid(0c9466e7b2b88de419f10c8270614b82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/SwordAnimsetPro/Attack_Place_fast_Rdown_1.fbx using Guid(0c9466e7b2b88de419f10c8270614b82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe2edd24bdc6dba55e1ae78f54470b54') in 0.132444 seconds 
+  Import took 0.135998 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000193 seconds.
+  path: Assets/Kubold/SwordAnimsetPro/Attack_Place_fast_Rdown_2.fbx
+  artifactKey: Guid(235229bebba0b5b47b5f7b40c3424093) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/SwordAnimsetPro/Attack_Place_fast_Rdown_2.fbx using Guid(235229bebba0b5b47b5f7b40c3424093) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '814a6bf3251e20b9786e6b84288a4915') in 0.130368 seconds 
+  Import took 0.134263 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000247 seconds.
+  path: Assets/Kubold/SwordAnimsetPro/Attack_Place_med_Rup_1.fbx
+  artifactKey: Guid(470599b8c7971bf4887f975cca60740d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/SwordAnimsetPro/Attack_Place_med_Rup_1.fbx using Guid(470599b8c7971bf4887f975cca60740d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '31edfca6f4768f57c32ecf1e00fc5b63') in 0.134091 seconds 
+  Import took 0.137590 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000204 seconds.
+  path: Assets/Kubold/SwordAnimsetPro/Attack_Place_slow_Rdown_1.fbx
+  artifactKey: Guid(17f8409d5fb0f5f42b36915f2eb21401) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/SwordAnimsetPro/Attack_Place_slow_Rdown_1.fbx using Guid(17f8409d5fb0f5f42b36915f2eb21401) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88f13f8f313146131645fdc570b37a66') in 0.130254 seconds 
+  Import took 0.133678 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000198 seconds.
+  path: Assets/Kubold/SwordAnimsetPro/Attack_Place_snap_Ldown_1.fbx
+  artifactKey: Guid(a5f7498f2aea1ed40898c35708cf1f87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/SwordAnimsetPro/Attack_Place_snap_Ldown_1.fbx using Guid(a5f7498f2aea1ed40898c35708cf1f87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c7fbd29732a1fe1e54da1d8c46003d4') in 0.128527 seconds 
+  Import took 0.131926 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 98.694946 seconds.
+  path: Assets/Kubold/MovementAnimsetPro/Models/Environment/4x4Block/4x4Block.FBX
+  artifactKey: Guid(4ce07d41751ae204eb87da269331c2b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/MovementAnimsetPro/Models/Environment/4x4Block/4x4Block.FBX using Guid(4ce07d41751ae204eb87da269331c2b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed9a0b35d1258f41fd3f1c13854e2e3a') in 0.087904 seconds 
+  Import took 0.091145 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000207 seconds.
+  path: Assets/Kubold/MovementAnimsetPro/Models/Environment/4x4BlockCrushed/Materials/4x4Block_Crushed.mat
+  artifactKey: Guid(c31ca7c49ce883a459cef8edf5746f42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/MovementAnimsetPro/Models/Environment/4x4BlockCrushed/Materials/4x4Block_Crushed.mat using Guid(c31ca7c49ce883a459cef8edf5746f42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '562e20c4ff03eb7f3f07388c545e0093') in 0.049866 seconds 
+  Import took 0.052790 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000218 seconds.
+  path: Assets/Kubold/MovementAnimsetPro/Models/Environment/4x4BlockCrushed/Materials/4x4BlockCrushed_D.tga
+  artifactKey: Guid(43f39fed1bbd9ef47a4d507facec0e82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/MovementAnimsetPro/Models/Environment/4x4BlockCrushed/Materials/4x4BlockCrushed_D.tga using Guid(43f39fed1bbd9ef47a4d507facec0e82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e1c1c81b1665dfd964c4d3434bf98c24') in 0.048196 seconds 
+  Import took 0.051255 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000232 seconds.
+  path: Assets/Kubold/MovementAnimsetPro/Models/Environment/4x4Block/Materials/4x4Block_S.tga
+  artifactKey: Guid(56698fb7e9c246749b0f8b3d1d8e447b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/MovementAnimsetPro/Models/Environment/4x4Block/Materials/4x4Block_S.tga using Guid(56698fb7e9c246749b0f8b3d1d8e447b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f623c719c07d06a0fea6f7368664cf0') in 0.014857 seconds 
+  Import took 0.018168 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000226 seconds.
+  path: Assets/Kubold/MovementAnimsetPro/Models/Environment/4x4BlockCrushed/4x4BlockCrushed.prefab
+  artifactKey: Guid(88f58f08dfb98fc4c8b447ad6d35bc4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/MovementAnimsetPro/Models/Environment/4x4BlockCrushed/4x4BlockCrushed.prefab using Guid(88f58f08dfb98fc4c8b447ad6d35bc4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47ec644ec4486c70218d7001ca07625e') in 0.027069 seconds 
+  Import took 0.030607 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000196 seconds.
+  path: Assets/Kubold/MovementAnimsetPro/Models/Environment/4x4Block/4x4Block.prefab
+  artifactKey: Guid(dc20d036987697048a80bd0fa7cfc5b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/MovementAnimsetPro/Models/Environment/4x4Block/4x4Block.prefab using Guid(dc20d036987697048a80bd0fa7cfc5b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7dff8b4860a3044f7a166e1936253001') in 0.016771 seconds 
+  Import took 0.020198 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000171 seconds.
+  path: Assets/Kubold/MovementAnimsetPro/Models/Environment/4x4BlockCrushed/4x4BlockCrushed.FBX
+  artifactKey: Guid(d9129061a3410cc48a7591ebbed6e8de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/MovementAnimsetPro/Models/Environment/4x4BlockCrushed/4x4BlockCrushed.FBX using Guid(d9129061a3410cc48a7591ebbed6e8de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd9eb6c1f4b23fcbb4fd87578d10e67a4') in 0.033346 seconds 
+  Import took 0.036565 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000237 seconds.
+  path: Assets/Kubold/MovementAnimsetPro/Models/Environment/4x4Block/Materials/4x4Block_N.tga
+  artifactKey: Guid(b24bdf1f0aa4567428f1fd001d43ab4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/MovementAnimsetPro/Models/Environment/4x4Block/Materials/4x4Block_N.tga using Guid(b24bdf1f0aa4567428f1fd001d43ab4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c2b369fd7c2c27ba744de8991b9e6c0c') in 0.018510 seconds 
+  Import took 0.022235 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000171 seconds.
+  path: Assets/Kubold/MovementAnimsetPro/Models/Environment/4x4BlockCrushed/Materials/4x4BlockCrushed_N.tga
+  artifactKey: Guid(24a3eae8d5e270d41a6657e012881aa8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/MovementAnimsetPro/Models/Environment/4x4BlockCrushed/Materials/4x4BlockCrushed_N.tga using Guid(24a3eae8d5e270d41a6657e012881aa8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd41c6b1ce1fb7e9552ef81b672319d3') in 0.014180 seconds 
+  Import took 0.016693 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000167 seconds.
+  path: Assets/Kubold/MovementAnimsetPro/Models/Environment/4x4Block/Materials/4x4Block_D.tga
+  artifactKey: Guid(7f12db0c8d22275439bee6b3c1ee11ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/MovementAnimsetPro/Models/Environment/4x4Block/Materials/4x4Block_D.tga using Guid(7f12db0c8d22275439bee6b3c1ee11ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9500e8a19cb4e21383ad7dbdbda8ac4a') in 0.015936 seconds 
+  Import took 0.018758 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000208 seconds.
+  path: Assets/Kubold/MovementAnimsetPro/Models/Environment/4x4Block/Materials/4x4Block.mat
+  artifactKey: Guid(ff1442a1b29dc5340946004fb5c4757f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Kubold/MovementAnimsetPro/Models/Environment/4x4Block/Materials/4x4Block.mat using Guid(ff1442a1b29dc5340946004fb5c4757f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b59bc74788d47a398c7952c45cfe78cc') in 0.014917 seconds 
+  Import took 0.017819 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1268.235902 seconds.
+  path: Assets/Animators/Twohanded.controller
+  artifactKey: Guid(1638c0619762eed49bef26715240eea7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animators/Twohanded.controller using Guid(1638c0619762eed49bef26715240eea7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f79d7302feb4c7b182a44e3c2bce25aa') in 0.040543 seconds 
+  Import took 0.045754 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003863 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.56 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.261 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1262ms)
+		BeginReloadAssembly (184ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (10ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (70ms)
+		EndReloadAssembly (995ms)
+			LoadAssemblies (124ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (332ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (47ms)
+			SetupLoadedEditorAssemblies (363ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (9ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (92ms)
+				ProcessInitializeOnLoadAttributes (245ms)
+				ProcessInitializeOnLoadMethodAttributes (5ms)
+				AfterProcessingInitializeOnLoad (11ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.38 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1542 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 92.8 MB.
+System memory in use after: 92.9 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2036.
+Total: 3.413300 ms (FindLiveObjects: 0.158300 ms CreateObjectMapping: 0.040100 ms MarkObjects: 3.184300 ms  DeleteObjects: 0.028800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004826 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.42 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.124 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1124ms)
+		BeginReloadAssembly (126ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (33ms)
+		EndReloadAssembly (917ms)
+			LoadAssemblies (105ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (304ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (47ms)
+			SetupLoadedEditorAssemblies (346ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (7ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (91ms)
+				ProcessInitializeOnLoadAttributes (232ms)
+				ProcessInitializeOnLoadMethodAttributes (4ms)
+				AfterProcessingInitializeOnLoad (10ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.38 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1542 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 92.9 MB.
+System memory in use after: 93.0 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2038.
+Total: 3.011800 ms (FindLiveObjects: 0.159500 ms CreateObjectMapping: 0.040400 ms MarkObjects: 2.792000 ms  DeleteObjects: 0.018500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004869 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.40 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.326 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1328ms)
+		BeginReloadAssembly (185ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (13ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (71ms)
+		EndReloadAssembly (1055ms)
+			LoadAssemblies (123ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (357ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (50ms)
+			SetupLoadedEditorAssemblies (370ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (7ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (92ms)
+				ProcessInitializeOnLoadAttributes (254ms)
+				ProcessInitializeOnLoadMethodAttributes (5ms)
+				AfterProcessingInitializeOnLoad (11ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.39 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1542 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 92.9 MB.
+System memory in use after: 93.0 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2040.
+Total: 3.452900 ms (FindLiveObjects: 0.180200 ms CreateObjectMapping: 0.041300 ms MarkObjects: 3.192400 ms  DeleteObjects: 0.037100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004172 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.39 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.166 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1167ms)
+		BeginReloadAssembly (136ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (34ms)
+		EndReloadAssembly (943ms)
+			LoadAssemblies (106ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (318ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (48ms)
+			SetupLoadedEditorAssemblies (356ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (6ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (89ms)
+				ProcessInitializeOnLoadAttributes (243ms)
+				ProcessInitializeOnLoadMethodAttributes (5ms)
+				AfterProcessingInitializeOnLoad (11ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.41 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1542 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 92.9 MB.
+System memory in use after: 93.0 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2042.
+Total: 3.424100 ms (FindLiveObjects: 0.178100 ms CreateObjectMapping: 0.041700 ms MarkObjects: 3.178600 ms  DeleteObjects: 0.023500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004423 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.37 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.187 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1187ms)
+		BeginReloadAssembly (138ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (34ms)
+		EndReloadAssembly (967ms)
+			LoadAssemblies (107ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (326ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (47ms)
+			SetupLoadedEditorAssemblies (363ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (6ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (96ms)
+				ProcessInitializeOnLoadAttributes (245ms)
+				ProcessInitializeOnLoadMethodAttributes (5ms)
+				AfterProcessingInitializeOnLoad (10ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.44 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1542 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 92.9 MB.
+System memory in use after: 93.0 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2044.
+Total: 3.475400 ms (FindLiveObjects: 0.178700 ms CreateObjectMapping: 0.043400 ms MarkObjects: 3.231500 ms  DeleteObjects: 0.020000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004865 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.39 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.188 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1189ms)
+		BeginReloadAssembly (131ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (34ms)
+		EndReloadAssembly (973ms)
+			LoadAssemblies (110ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (335ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (48ms)
+			SetupLoadedEditorAssemblies (359ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (6ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (90ms)
+				ProcessInitializeOnLoadAttributes (246ms)
+				ProcessInitializeOnLoadMethodAttributes (5ms)
+				AfterProcessingInitializeOnLoad (11ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.48 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1542 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 92.9 MB.
+System memory in use after: 93.0 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2046.
+Total: 3.186500 ms (FindLiveObjects: 0.209400 ms CreateObjectMapping: 0.041600 ms MarkObjects: 2.915800 ms  DeleteObjects: 0.017600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003978 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.42 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.175 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1175ms)
+		BeginReloadAssembly (139ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (41ms)
+		EndReloadAssembly (953ms)
+			LoadAssemblies (101ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (325ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (46ms)
+			SetupLoadedEditorAssemblies (356ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (6ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (100ms)
+				ProcessInitializeOnLoadAttributes (235ms)
+				ProcessInitializeOnLoadMethodAttributes (4ms)
+				AfterProcessingInitializeOnLoad (10ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.39 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1542 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 92.9 MB.
+System memory in use after: 93.0 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2048.
+Total: 3.429900 ms (FindLiveObjects: 0.182200 ms CreateObjectMapping: 0.042100 ms MarkObjects: 3.180300 ms  DeleteObjects: 0.023700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004078 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.46 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.156 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1156ms)
+		BeginReloadAssembly (137ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (33ms)
+		EndReloadAssembly (938ms)
+			LoadAssemblies (109ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (315ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (47ms)
+			SetupLoadedEditorAssemblies (357ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (6ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (90ms)
+				ProcessInitializeOnLoadAttributes (243ms)
+				ProcessInitializeOnLoadMethodAttributes (5ms)
+				AfterProcessingInitializeOnLoad (11ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.38 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1542 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 92.9 MB.
+System memory in use after: 93.0 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2050.
+Total: 3.152800 ms (FindLiveObjects: 0.166500 ms CreateObjectMapping: 0.041300 ms MarkObjects: 2.929400 ms  DeleteObjects: 0.014400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004144 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.53 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.186 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1186ms)
+		BeginReloadAssembly (140ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (36ms)
+		EndReloadAssembly (950ms)
+			LoadAssemblies (108ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (312ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (46ms)
+			SetupLoadedEditorAssemblies (361ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (6ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (90ms)
+				ProcessInitializeOnLoadAttributes (246ms)
+				ProcessInitializeOnLoadMethodAttributes (5ms)
+				AfterProcessingInitializeOnLoad (11ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (10ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.39 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1542 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 92.9 MB.
+System memory in use after: 93.0 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2052.
+Total: 3.024500 ms (FindLiveObjects: 0.158200 ms CreateObjectMapping: 0.040900 ms MarkObjects: 2.809900 ms  DeleteObjects: 0.014300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004193 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.39 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.159 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1159ms)
+		BeginReloadAssembly (125ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (34ms)
+		EndReloadAssembly (952ms)
+			LoadAssemblies (108ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (315ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (48ms)
+			SetupLoadedEditorAssemblies (358ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (6ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (90ms)
+				ProcessInitializeOnLoadAttributes (245ms)
+				ProcessInitializeOnLoadMethodAttributes (5ms)
+				AfterProcessingInitializeOnLoad (11ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.44 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1542 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 92.9 MB.
+System memory in use after: 93.0 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2054.
+Total: 3.045600 ms (FindLiveObjects: 0.161100 ms CreateObjectMapping: 0.041900 ms MarkObjects: 2.826400 ms  DeleteObjects: 0.014800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004109 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.44 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.147 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1148ms)
+		BeginReloadAssembly (124ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (32ms)
+		EndReloadAssembly (941ms)
+			LoadAssemblies (103ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (311ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (46ms)
+			SetupLoadedEditorAssemblies (356ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (7ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (91ms)
+				ProcessInitializeOnLoadAttributes (241ms)
+				ProcessInitializeOnLoadMethodAttributes (5ms)
+				AfterProcessingInitializeOnLoad (10ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.38 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1542 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 92.9 MB.
+System memory in use after: 93.0 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2056.
+Total: 3.249500 ms (FindLiveObjects: 0.174800 ms CreateObjectMapping: 0.041300 ms MarkObjects: 3.013800 ms  DeleteObjects: 0.018200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004071 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.37 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.138 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1139ms)
+		BeginReloadAssembly (133ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (31ms)
+		EndReloadAssembly (925ms)
+			LoadAssemblies (113ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (298ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (53ms)
+			SetupLoadedEditorAssemblies (348ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (6ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (87ms)
+				ProcessInitializeOnLoadAttributes (239ms)
+				ProcessInitializeOnLoadMethodAttributes (5ms)
+				AfterProcessingInitializeOnLoad (11ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (9ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.38 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1542 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 92.9 MB.
+System memory in use after: 93.0 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2058.
+Total: 3.044900 ms (FindLiveObjects: 0.188700 ms CreateObjectMapping: 0.040800 ms MarkObjects: 2.794200 ms  DeleteObjects: 0.019900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
