@@ -142,7 +142,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Attack1_combo2
+  m_Name: Attack2_combo2
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -266,7 +266,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: is_attack1_pressed
+    m_ConditionEvent: is_attack2_pressed
     m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: is_grounded
@@ -459,7 +459,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: is_attack1_pressed
+    m_ConditionEvent: is_attack2_pressed
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -8444748980886001466}
@@ -467,9 +467,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.25000024
+  m_TransitionDuration: 0.4572466
   m_TransitionOffset: 0
-  m_ExitTime: 0.24217586
+  m_ExitTime: 0.27026644
   m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -591,9 +591,6 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 1
     m_ConditionEvent: is_jump_pressed
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: is_attacking
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1033673853172086295}
@@ -764,7 +761,7 @@ BlendTree:
   m_Name: Blend Tree
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400050, guid: fb07a934dbc1969468121112ca048964, type: 3}
+    m_Motion: {fileID: 7400046, guid: fb07a934dbc1969468121112ca048964, type: 3}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -885,7 +882,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Attack1_combo1
+  m_Name: Attack2_combo1
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -1750,9 +1747,6 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 1
     m_ConditionEvent: is_block_pressed
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: is_attacking
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1661082347815873906}

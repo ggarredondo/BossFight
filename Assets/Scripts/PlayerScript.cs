@@ -63,6 +63,18 @@ public class PlayerScript : MonoBehaviour
             height_dir.y = 0f;
     }
 
+    bool rt_in_use = false;
+    private bool UseRT() {
+        bool use = false;
+        if (rt_in_use)
+            rt_in_use = Input.GetAxis("Attack2") == 1;
+        else {
+            rt_in_use = Input.GetAxis("Attack2") == 1;
+            use = rt_in_use;
+        }
+        return use;
+    }
+
     private void Action()
     {
         is_dodge_pressed = Input.GetButtonDown("Dodge") && is_grounded && !is_dodging && !is_blocking && !is_jumping && !is_landing && !is_attacking;
@@ -70,7 +82,7 @@ public class PlayerScript : MonoBehaviour
         if (is_jump_pressed)
             height_dir.y += jump_height;
         is_block_pressed = is_grounded && Input.GetButtonDown("Block") && !is_dodging && !is_blocking && !is_jumping;
-        is_attack1_pressed = Input.GetButtonDown("Attack1") && !is_dodging && !is_blocking;
+        is_attack2_pressed = UseRT() && !is_dodging && !is_blocking;
     }
 
     private void Animation()
@@ -91,6 +103,7 @@ public class PlayerScript : MonoBehaviour
         anim.SetBool("is_block_pressed", is_block_pressed);
         anim.SetBool("is_blocking", is_blocking);
         anim.SetBool("is_attack1_pressed", is_attack1_pressed);
+        anim.SetBool("is_attack2_pressed", is_attack2_pressed);
         anim.SetBool("is_attacking", is_attacking);
         anim.SetFloat("atk_side", atk_side);
         anim.SetBool("parry_late", parry_late);
@@ -105,7 +118,7 @@ public class PlayerScript : MonoBehaviour
             anim.GetCurrentAnimatorStateInfo(0).IsName("Parrying.Parrying Late");
         is_jumping = anim.GetCurrentAnimatorStateInfo(0).IsName("Jumping");
         is_landing = anim.GetCurrentAnimatorStateInfo(0).IsName("Landing");
-        is_attacking = anim.GetCurrentAnimatorStateInfo(0).IsName("Attacking.Attack1_combo1") || anim.GetCurrentAnimatorStateInfo(0).IsName("Attacking.Attack1_combo2");
+        is_attacking = anim.GetCurrentAnimatorStateInfo(0).IsName("Attacking.Attack2_combo1") || anim.GetCurrentAnimatorStateInfo(0).IsName("Attacking.Attack2_combo2");
         no_movement = anim.GetCurrentAnimatorStateInfo(0).IsName("Unlocked.Sprinting Stop")  || is_dodging || is_blocking || is_jumping
             || is_landing || is_attacking;
 
