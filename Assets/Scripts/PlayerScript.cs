@@ -82,6 +82,7 @@ public class PlayerScript : MonoBehaviour
         if (is_jump_pressed)
             height_dir.y += jump_height;
         is_block_pressed = is_grounded && Input.GetButtonDown("Block") && !is_dodging && !is_blocking && !is_jumping;
+        is_attack1_pressed = Input.GetButtonDown("Attack1") && !is_dodging && !is_blocking;
         is_attack2_pressed = UseRT() && !is_dodging && !is_blocking;
     }
 
@@ -118,7 +119,9 @@ public class PlayerScript : MonoBehaviour
             anim.GetCurrentAnimatorStateInfo(0).IsName("Parrying.Parrying Late");
         is_jumping = anim.GetCurrentAnimatorStateInfo(0).IsName("Jumping");
         is_landing = anim.GetCurrentAnimatorStateInfo(0).IsName("Landing");
-        is_attacking = anim.GetCurrentAnimatorStateInfo(0).IsName("Attacking.Attack2_combo1") || anim.GetCurrentAnimatorStateInfo(0).IsName("Attacking.Attack2_combo2");
+        is_attacking = anim.GetCurrentAnimatorStateInfo(0).IsName("Attacking.Attack2_combo1") || anim.GetCurrentAnimatorStateInfo(0).IsName("Attacking.Attack2_combo2")
+            || anim.GetCurrentAnimatorStateInfo(0).IsName("Attacking.Attack2_combo3") || anim.GetCurrentAnimatorStateInfo(0).IsName("Attacking.Attack1_combo1") ||
+            anim.GetCurrentAnimatorStateInfo(0).IsName("Attacking.Attack1_combo2") || anim.GetCurrentAnimatorStateInfo(0).IsName("Attacking.Attack1_combo3");
         no_movement = anim.GetCurrentAnimatorStateInfo(0).IsName("Unlocked.Sprinting Stop")  || is_dodging || is_blocking || is_jumping
             || is_landing || is_attacking;
 
