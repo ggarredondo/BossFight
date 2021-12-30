@@ -84,6 +84,9 @@ public class PlayerScript : MonoBehaviour
         is_block_pressed = is_grounded && Input.GetButtonDown("Block") && !is_dodging && !is_blocking && !is_jumping;
         is_attack1_pressed = Input.GetButtonDown("Attack1") && !is_dodging;
         is_attack2_pressed = UseRT() && !is_dodging;
+        if (Input.GetButtonDown("LockOn")) // toggle lock on
+            is_locked = !is_locked;
+        Debug.Log(is_locked); //delete <-----------------------------------------------------------------------
     }
 
     private void Animation()
@@ -108,6 +111,7 @@ public class PlayerScript : MonoBehaviour
         anim.SetBool("is_attacking", is_attacking);
         anim.SetFloat("atk_side", atk_side);
         anim.SetBool("parry_late", parry_late);
+        //anim.SetBool("is_locked", is_locked);
     }
 
     void Update()
