@@ -77,7 +77,7 @@ public class PlayerScript : MonoBehaviour
 
     private void Action()
     {
-        is_dodge_pressed = Input.GetButtonDown("Dodge") && is_grounded && !is_dodging && !is_blocking && !is_jumping && !is_landing && !is_attacking;
+        is_dodge_pressed = Input.GetButtonDown("Dodge") && is_grounded && !is_dodging && !is_blocking && !is_jumping && !is_landing;
         is_jump_pressed = Input.GetButtonDown("Dodge") && is_grounded && !is_dodging && !is_blocking && !is_jumping && !is_moving && !is_attacking;
         if (is_jump_pressed)
             height_dir.y += jump_height;
