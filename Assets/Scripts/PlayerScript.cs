@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using Cinemachine;
+using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -19,7 +17,7 @@ public class PlayerScript : MonoBehaviour
     // movement variables
     private float horizontal, vertical, move_magnitude, turn_smooth_velocity, target_angle, rotation_angle,
         dist_to_ground;
-    private Vector3 direction, move_dir, height_dir;
+    private Vector3 direction, height_dir;
     private bool is_moving, is_walking, is_sprinting, is_dodge_pressed, is_jump_pressed, is_grounded, is_locked, is_block_pressed,
         is_dodging, is_blocking, is_jumping, is_landing, is_attacking, is_attack1_pressed, is_attack2_pressed; // animator variables
     private bool no_movement; // variable for situations where I don't want the character to be able to move
@@ -42,14 +40,13 @@ public class PlayerScript : MonoBehaviour
 
         // character faces the direction it's moving to
         target_angle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
+        if (is_locked && !is_sprinting)
+            target_angle = Quaternion.LookRotation(boss_pos.transform.position - transform.position).eulerAngles.y;
         rotation_angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, target_angle, ref turn_smooth_velocity, turn_smoothness *
             System.Convert.ToSingle(!is_dodge_pressed) + 0.01f);
         is_moving = direction.magnitude > 0f;
-        if (is_moving && !no_movement && (!is_locked || is_sprinting))
+        if (is_moving && !no_movement)
             transform.rotation = Quaternion.Euler(0f, rotation_angle, 0f);
-        else if (is_moving && !no_movement && is_locked)
-            transform.LookAt(boss_pos);
-        move_dir = (Quaternion.Euler(0f, target_angle, 0f) * Vector3.forward).normalized; // movement relative to the camera
 
         // base movement phases: walking, running (default) and sprinting
         is_walking = move_magnitude >= walk_range_min && move_magnitude < walk_range_max && is_moving && !is_sprinting;
@@ -122,7 +119,7 @@ public class PlayerScript : MonoBehaviour
     void Update()
     {
         is_grounded = IsGrounded();
-        is_dodging = anim.GetCurrentAnimatorStateInfo(0).IsName("Rolling");
+        is_dodging = anim.GetCurrentAnimatorStateInfo(0).IsName("Rolling") || anim.GetCurrentAnimatorStateInfo(0).IsName("Locked.Dodging");
         is_blocking = anim.GetCurrentAnimatorStateInfo(0).IsName("Parrying.Parrying Base") ||
             anim.GetCurrentAnimatorStateInfo(0).IsName("Parrying.Parrying Success") ||
             anim.GetCurrentAnimatorStateInfo(0).IsName("Parrying.Parrying Late");
@@ -140,8 +137,6 @@ public class PlayerScript : MonoBehaviour
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
         direction.Set(horizontal, 0f, vertical);
-        Debug.Log("horizontal: " + horizontal);
-        Debug.Log("vertical: " + vertical);
 
         Action();
         Movement();
@@ -149,6 +144,6 @@ public class PlayerScript : MonoBehaviour
         Animation();
 
         // final movement
-        controller.Move((move_dir * direction.magnitude * System.Convert.ToSingle(!no_movement) + height_dir) * Time.deltaTime);
+        controller.Move(height_dir * Time.deltaTime);
     }
 }
