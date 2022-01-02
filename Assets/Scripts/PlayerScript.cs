@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class PlayerScript : MonoBehaviour
 {
-    public Transform cam;
+    public Transform cam, boss_pos;
     public Animator anim;
     public CharacterController controller;
+    public CinemachineVirtualCamera LockOnCamera;
 
     public float speed = 1f, walk_range_min = 0f, walk_range_max = 0.5f;
     public float turn_smoothness = 0.14f;
@@ -33,7 +35,7 @@ public class PlayerScript : MonoBehaviour
         return Physics.Raycast(transform.position, -Vector3.up, dist_to_ground + 0.1f);
     }
 
-    private void UnlockedMovement()
+    private void Movement()
     {
         move_magnitude = direction.sqrMagnitude;
         direction = direction.normalized;
@@ -43,8 +45,10 @@ public class PlayerScript : MonoBehaviour
         rotation_angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, target_angle, ref turn_smooth_velocity, turn_smoothness *
             System.Convert.ToSingle(!is_dodge_pressed) + 0.01f);
         is_moving = direction.magnitude > 0f;
-        if (is_moving && !no_movement)
+        if (is_moving && !no_movement && (!is_locked || is_sprinting))
             transform.rotation = Quaternion.Euler(0f, rotation_angle, 0f);
+        else if (is_moving && !no_movement && is_locked)
+            transform.LookAt(boss_pos);
         move_dir = (Quaternion.Euler(0f, target_angle, 0f) * Vector3.forward).normalized; // movement relative to the camera
 
         // base movement phases: walking, running (default) and sprinting
@@ -84,9 +88,10 @@ public class PlayerScript : MonoBehaviour
         is_block_pressed = is_grounded && Input.GetButtonDown("Block") && !is_dodging && !is_blocking && !is_jumping;
         is_attack1_pressed = Input.GetButtonDown("Attack1") && !is_dodging;
         is_attack2_pressed = UseRT() && !is_dodging;
-        if (Input.GetButtonDown("LockOn")) // toggle lock on
+        if (Input.GetButtonDown("LockOn")) { // toggle lock on
             is_locked = !is_locked;
-        Debug.Log(is_locked); //delete <-----------------------------------------------------------------------
+            LockOnCamera.Priority = System.Convert.ToInt32(is_locked);
+        }
     }
 
     private void Animation()
@@ -111,7 +116,7 @@ public class PlayerScript : MonoBehaviour
         anim.SetBool("is_attacking", is_attacking);
         anim.SetFloat("atk_side", atk_side);
         anim.SetBool("parry_late", parry_late);
-        //anim.SetBool("is_locked", is_locked);
+        anim.SetBool("is_locked", is_locked);
     }
 
     void Update()
@@ -137,7 +142,7 @@ public class PlayerScript : MonoBehaviour
         direction.Set(horizontal, 0f, vertical);
 
         Action();
-        UnlockedMovement();
+        Movement();
         Fall();
         Animation();
 
