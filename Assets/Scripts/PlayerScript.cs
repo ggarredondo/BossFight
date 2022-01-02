@@ -140,6 +140,8 @@ public class PlayerScript : MonoBehaviour
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
         direction.Set(horizontal, 0f, vertical);
+        Debug.Log("horizontal: " + horizontal);
+        Debug.Log("vertical: " + vertical);
 
         Action();
         Movement();
