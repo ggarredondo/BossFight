@@ -40,7 +40,7 @@ public class PlayerScript : MonoBehaviour
 
         // character faces the direction it's moving to
         target_angle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
-        if (is_locked && !is_sprinting)
+        if (is_locked && !is_sprinting && !is_dodge_pressed)
             target_angle = Quaternion.LookRotation(boss_pos.transform.position - transform.position).eulerAngles.y;
         rotation_angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, target_angle, ref turn_smooth_velocity, turn_smoothness *
             System.Convert.ToSingle(!is_dodge_pressed) + 0.01f);
@@ -79,7 +79,7 @@ public class PlayerScript : MonoBehaviour
     private void Action()
     {
         is_dodge_pressed = Input.GetButtonDown("Dodge") && is_grounded && !is_dodging && !is_blocking && !is_jumping && !is_landing;
-        is_jump_pressed = Input.GetButtonDown("Dodge") && is_grounded && !is_dodging && !is_blocking && !is_jumping && !is_moving && !is_attacking;
+        is_jump_pressed = Input.GetButtonDown("Dodge") && is_grounded && !is_dodging && !is_blocking && !is_jumping && !is_moving;
         if (is_jump_pressed)
             height_dir.y += jump_height;
         is_block_pressed = is_grounded && Input.GetButtonDown("Block") && !is_dodging && !is_blocking && !is_jumping;
@@ -119,7 +119,7 @@ public class PlayerScript : MonoBehaviour
     void Update()
     {
         is_grounded = IsGrounded();
-        is_dodging = anim.GetCurrentAnimatorStateInfo(0).IsName("Rolling") || anim.GetCurrentAnimatorStateInfo(0).IsName("Locked.Dodging");
+        is_dodging = anim.GetCurrentAnimatorStateInfo(0).IsName("Rolling");
         is_blocking = anim.GetCurrentAnimatorStateInfo(0).IsName("Parrying.Parrying Base") ||
             anim.GetCurrentAnimatorStateInfo(0).IsName("Parrying.Parrying Success") ||
             anim.GetCurrentAnimatorStateInfo(0).IsName("Parrying.Parrying Late");
