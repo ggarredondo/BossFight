@@ -5,11 +5,12 @@ using UnityEngine;
 public class BossScript : MonoBehaviour
 {
     public Transform player_pos;
-    public float turn_smoothness, random_cooldown, critical_distance, combat_distance, follow_distance;
+    public float turn_smoothness, walk_smoothness, critical_distance, combat_distance, follow_distance;
     public TimedRandom strafe, straight;
 
     Animator anim;
-    float horizontal = 1f, vertical = 0f, distance, target_angle, rotation_angle, turn_smooth_velocity;
+    float horizontal = 1f, target_horizontal, vertical = 0f, target_vertical, distance, target_angle, 
+        rotation_angle, turn_smooth_velocity, horizontal_smooth_velocity, vertical_smooth_velocity;
     bool is_moving = false, is_walking = false, is_following = false;
 
     private void Start()
@@ -27,13 +28,15 @@ public class BossScript : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, rotation_angle, 0f);
 
         // Random movement at combat distance
-        horizontal = strafe.value > 0.5f ? 1f : -1f;
-        vertical = Mathf.Round(straight.Range(-1f, 1f));
+        target_horizontal = strafe.value > 0.5f ? 1f : -1f;
+        horizontal = Mathf.SmoothStep(horizontal, target_horizontal, walk_smoothness * Time.deltaTime);
+        target_vertical = Mathf.Round(straight.Range(-1f, 1f));
+        vertical = Mathf.SmoothStep(vertical, target_vertical, walk_smoothness * Time.deltaTime);
     }
 
     private void Animation() 
     {
-        anim.SetBool("out_of_combat", distance >= combat_distance);
+        anim.SetBool("out_of_combat", distance > follow_distance);
 
         is_following = distance >= combat_distance && distance <= follow_distance;
         anim.SetBool("is_following", is_following);
@@ -44,7 +47,7 @@ public class BossScript : MonoBehaviour
         anim.SetFloat("vertical", vertical);
     }
 
-    void Update()
+    void FixedUpdate()
     {
         distance = Vector3.Distance(transform.position, player_pos.transform.position);
         Debug.Log(distance); // <------------- delete
