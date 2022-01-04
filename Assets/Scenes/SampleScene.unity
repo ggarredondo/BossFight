@@ -472,8 +472,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 361701462}
-  m_LocalRotation: {x: 0.01061564, y: -0.000026656837, z: 0.00000028299533, w: 0.9999437}
-  m_LocalPosition: {x: 0.0011285897, y: 1.7471899, z: -23.834251}
+  m_LocalRotation: {x: 0.01095572, y: -0.00002665347, z: 0.0000002920255, w: 0.99994}
+  m_LocalPosition: {x: 0.0011285696, y: 1.7490709, z: -23.834211}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1753805599}
@@ -720,7 +720,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.055497665, y: -0.000000015653743, z: -4.5827778e-10, w: 0.99845886}
+  m_LocalRotation: {x: 0.055497665, y: 0.0000000067790094, z: 6.570765e-10, w: 0.99845886}
   m_LocalPosition: {x: 0, y: 1.6748362, z: -23.365303}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -978,8 +978,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player_pos: {fileID: 1841483656}
   turn_smoothness: 0.15
+  random_cooldown: 0
+  critical_distance: 3.5
   combat_distance: 6
   follow_distance: 12
+  strafe:
+    cooldown: 1
+  straight:
+    cooldown: 1
 --- !u!1 &1293930543
 GameObject:
   m_ObjectHideFlags: 3
@@ -1375,7 +1381,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1578788602}
-  m_LocalRotation: {x: 0.030357543, y: 0.000026639142, z: -0.0000013756347, w: 0.99953914}
+  m_LocalRotation: {x: 0.030357543, y: 0.000026643436, z: -0.0000013758566, w: 0.99953914}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
