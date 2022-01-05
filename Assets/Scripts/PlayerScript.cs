@@ -45,7 +45,7 @@ public class PlayerScript : MonoBehaviour
         rotation_angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, target_angle, ref turn_smooth_velocity, turn_smoothness *
             System.Convert.ToSingle(!is_dodge_pressed) + 0.01f);
         is_moving = direction.magnitude > 0f;
-        if (is_moving && !no_movement)
+        if ((is_moving && !no_movement) || (is_attacking && is_locked))
             transform.rotation = Quaternion.Euler(0f, rotation_angle, 0f);
 
         // base movement phases: walking, running (default) and sprinting
@@ -130,8 +130,7 @@ public class PlayerScript : MonoBehaviour
             anim.GetCurrentAnimatorStateInfo(0).IsName("Attacking.Attack1_combo2") || anim.GetCurrentAnimatorStateInfo(0).IsName("Attacking.Attack1_combo3") || 
             anim.GetCurrentAnimatorStateInfo(0).IsName("Unlocked.Sprint Bash") || anim.GetCurrentAnimatorStateInfo(0).IsName("Jump Attack") 
             || anim.GetCurrentAnimatorStateInfo(0).IsName("Parrying.Riposte");
-        no_movement = anim.GetCurrentAnimatorStateInfo(0).IsName("Unlocked.Sprinting Stop")  || is_dodging || is_blocking || is_jumping
-            || is_landing || is_attacking;
+        no_movement = anim.GetCurrentAnimatorStateInfo(0).IsName("Unlocked.Sprinting Stop")  || is_dodging || is_blocking || is_landing || is_attacking;
 
         // basic input
         horizontal = Input.GetAxis("Horizontal");

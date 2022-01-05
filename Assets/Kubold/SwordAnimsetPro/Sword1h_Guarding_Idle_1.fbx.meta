@@ -1,246 +1,716 @@
 fileFormatVersion: 2
 guid: 003e7aff0ebcf1c47be6e0ed19adc08c
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: ball_l
-    100002: ball_r
-    100004: calf_l
-    100006: calf_r
-    100008: calf_twist_01_l
-    100010: calf_twist_01_r
-    100012: clavicle_l
-    100014: clavicle_r
-    100016: foot_l
-    100018: foot_r
-    100020: GEO
-    100022: hand_l
-    100024: hand_r
-    100026: head
-    100028: ik_foot_l
-    100030: ik_foot_r
-    100032: ik_foot_root
-    100034: ik_hand_gun
-    100036: ik_hand_l
-    100038: ik_hand_r
-    100040: ik_hand_root
-    100042: index_01_l
-    100044: index_01_r
-    100046: index_02_l
-    100048: index_02_r
-    100050: index_03_l
-    100052: index_03_l 1
-    100054: index_03_r
-    100056: index_03_r 1
-    100058: lowerarm_l
-    100060: lowerarm_r
-    100062: lowerarm_twist_01_l
-    100064: lowerarm_twist_01_r
-    100066: mannequin_geo_arm_l
-    100068: mannequin_geo_arm_r
-    100070: mannequin_geo_calf_l
-    100072: mannequin_geo_calf_r
-    100074: mannequin_geo_chest
-    100076: mannequin_geo_foot_l
-    100078: mannequin_geo_foot_r
-    100080: mannequin_geo_forearm_l
-    100082: mannequin_geo_forearm_r
-    100084: mannequin_geo_hand_l
-    100086: mannequin_geo_hand_r
-    100088: mannequin_geo_head
-    100090: mannequin_geo_logo
-    100092: mannequin_geo_lower_torso
-    100094: mannequin_geo_neck
-    100096: mannequin_geo_pelvis
-    100098: mannequin_geo_thigh_l
-    100100: mannequin_geo_thigh_r
-    100102: middle_01_l
-    100104: middle_01_r
-    100106: middle_02_l
-    100108: middle_02_r
-    100110: middle_03_l
-    100112: middle_03_l 1
-    100114: middle_03_r
-    100116: middle_03_r 1
-    100118: neck_01
-    100120: pelvis
-    100122: pinky_01_l
-    100124: pinky_01_r
-    100126: pinky_02_l
-    100128: pinky_02_r
-    100130: pinky_03_l
-    100132: pinky_03_l 1
-    100134: pinky_03_r
-    100136: pinky_03_r 1
-    100138: ring_01_l
-    100140: ring_01_r
-    100142: ring_02_l
-    100144: ring_02_r
-    100146: ring_03_l
-    100148: ring_03_l 1
-    100150: ring_03_r
-    100152: ring_03_r 1
-    100154: root
-    100156: spine_01
-    100158: spine_02
-    100160: spine_03
-    100162: //RootNode
-    100164: thigh_l
-    100166: thigh_r
-    100168: thigh_twist_01_l
-    100170: thigh_twist_01_r
-    100172: thumb_01_l
-    100174: thumb_01_r
-    100176: thumb_02_l
-    100178: thumb_02_r
-    100180: thumb_03_l
-    100182: thumb_03_l 1
-    100184: thumb_03_r
-    100186: thumb_03_r 1
-    100188: upperarm_l
-    100190: upperarm_r
-    100192: upperarm_twist_01_l
-    100194: upperarm_twist_01_r
-    400000: ball_l
-    400002: ball_r
-    400004: calf_l
-    400006: calf_r
-    400008: calf_twist_01_l
-    400010: calf_twist_01_r
-    400012: clavicle_l
-    400014: clavicle_r
-    400016: foot_l
-    400018: foot_r
-    400020: GEO
-    400022: hand_l
-    400024: hand_r
-    400026: head
-    400028: ik_foot_l
-    400030: ik_foot_r
-    400032: ik_foot_root
-    400034: ik_hand_gun
-    400036: ik_hand_l
-    400038: ik_hand_r
-    400040: ik_hand_root
-    400042: index_01_l
-    400044: index_01_r
-    400046: index_02_l
-    400048: index_02_r
-    400050: index_03_l
-    400052: index_03_l 1
-    400054: index_03_r
-    400056: index_03_r 1
-    400058: lowerarm_l
-    400060: lowerarm_r
-    400062: lowerarm_twist_01_l
-    400064: lowerarm_twist_01_r
-    400066: mannequin_geo_arm_l
-    400068: mannequin_geo_arm_r
-    400070: mannequin_geo_calf_l
-    400072: mannequin_geo_calf_r
-    400074: mannequin_geo_chest
-    400076: mannequin_geo_foot_l
-    400078: mannequin_geo_foot_r
-    400080: mannequin_geo_forearm_l
-    400082: mannequin_geo_forearm_r
-    400084: mannequin_geo_hand_l
-    400086: mannequin_geo_hand_r
-    400088: mannequin_geo_head
-    400090: mannequin_geo_logo
-    400092: mannequin_geo_lower_torso
-    400094: mannequin_geo_neck
-    400096: mannequin_geo_pelvis
-    400098: mannequin_geo_thigh_l
-    400100: mannequin_geo_thigh_r
-    400102: middle_01_l
-    400104: middle_01_r
-    400106: middle_02_l
-    400108: middle_02_r
-    400110: middle_03_l
-    400112: middle_03_l 1
-    400114: middle_03_r
-    400116: middle_03_r 1
-    400118: neck_01
-    400120: pelvis
-    400122: pinky_01_l
-    400124: pinky_01_r
-    400126: pinky_02_l
-    400128: pinky_02_r
-    400130: pinky_03_l
-    400132: pinky_03_l 1
-    400134: pinky_03_r
-    400136: pinky_03_r 1
-    400138: ring_01_l
-    400140: ring_01_r
-    400142: ring_02_l
-    400144: ring_02_r
-    400146: ring_03_l
-    400148: ring_03_l 1
-    400150: ring_03_r
-    400152: ring_03_r 1
-    400154: root
-    400156: spine_01
-    400158: spine_02
-    400160: spine_03
-    400162: //RootNode
-    400164: thigh_l
-    400166: thigh_r
-    400168: thigh_twist_01_l
-    400170: thigh_twist_01_r
-    400172: thumb_01_l
-    400174: thumb_01_r
-    400176: thumb_02_l
-    400178: thumb_02_r
-    400180: thumb_03_l
-    400182: thumb_03_l 1
-    400184: thumb_03_r
-    400186: thumb_03_r 1
-    400188: upperarm_l
-    400190: upperarm_r
-    400192: upperarm_twist_01_l
-    400194: upperarm_twist_01_r
-    2100000: body_m
-    2100002: logo_m
-    4300000: mannequin_geo_calf_l
-    4300002: mannequin_geo_calf_r
-    4300004: mannequin_geo_foot_l
-    4300006: mannequin_geo_foot_r
-    4300008: mannequin_geo_thigh_l
-    4300010: mannequin_geo_thigh_r
-    4300012: mannequin_geo_pelvis
-    4300014: mannequin_geo_lower_torso
-    4300016: mannequin_geo_neck
-    4300018: mannequin_geo_head
-    4300020: mannequin_geo_arm_r
-    4300022: mannequin_geo_forearm_r
-    4300024: mannequin_geo_hand_r
-    4300026: mannequin_geo_arm_l
-    4300028: mannequin_geo_forearm_l
-    4300030: mannequin_geo_hand_l
-    4300032: mannequin_geo_chest
-    4300034: mannequin_geo_logo
-    7400000: Sword1h_Guarding_Idle_1
-    13700000: mannequin_geo_arm_l
-    13700002: mannequin_geo_arm_r
-    13700004: mannequin_geo_calf_l
-    13700006: mannequin_geo_calf_r
-    13700008: mannequin_geo_chest
-    13700010: mannequin_geo_foot_l
-    13700012: mannequin_geo_foot_r
-    13700014: mannequin_geo_forearm_l
-    13700016: mannequin_geo_forearm_r
-    13700018: mannequin_geo_hand_l
-    13700020: mannequin_geo_hand_r
-    13700022: mannequin_geo_head
-    13700024: mannequin_geo_logo
-    13700026: mannequin_geo_lower_torso
-    13700028: mannequin_geo_neck
-    13700030: mannequin_geo_pelvis
-    13700032: mannequin_geo_thigh_l
-    13700034: mannequin_geo_thigh_r
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: ball_l
+  - first:
+      1: 100002
+    second: ball_r
+  - first:
+      1: 100004
+    second: calf_l
+  - first:
+      1: 100006
+    second: calf_r
+  - first:
+      1: 100008
+    second: calf_twist_01_l
+  - first:
+      1: 100010
+    second: calf_twist_01_r
+  - first:
+      1: 100012
+    second: clavicle_l
+  - first:
+      1: 100014
+    second: clavicle_r
+  - first:
+      1: 100016
+    second: foot_l
+  - first:
+      1: 100018
+    second: foot_r
+  - first:
+      1: 100020
+    second: GEO
+  - first:
+      1: 100022
+    second: hand_l
+  - first:
+      1: 100024
+    second: hand_r
+  - first:
+      1: 100026
+    second: head
+  - first:
+      1: 100028
+    second: ik_foot_l
+  - first:
+      1: 100030
+    second: ik_foot_r
+  - first:
+      1: 100032
+    second: ik_foot_root
+  - first:
+      1: 100034
+    second: ik_hand_gun
+  - first:
+      1: 100036
+    second: ik_hand_l
+  - first:
+      1: 100038
+    second: ik_hand_r
+  - first:
+      1: 100040
+    second: ik_hand_root
+  - first:
+      1: 100042
+    second: index_01_l
+  - first:
+      1: 100044
+    second: index_01_r
+  - first:
+      1: 100046
+    second: index_02_l
+  - first:
+      1: 100048
+    second: index_02_r
+  - first:
+      1: 100050
+    second: index_03_l
+  - first:
+      1: 100052
+    second: index_03_l 1
+  - first:
+      1: 100054
+    second: index_03_r
+  - first:
+      1: 100056
+    second: index_03_r 1
+  - first:
+      1: 100058
+    second: lowerarm_l
+  - first:
+      1: 100060
+    second: lowerarm_r
+  - first:
+      1: 100062
+    second: lowerarm_twist_01_l
+  - first:
+      1: 100064
+    second: lowerarm_twist_01_r
+  - first:
+      1: 100066
+    second: mannequin_geo_arm_l
+  - first:
+      1: 100068
+    second: mannequin_geo_arm_r
+  - first:
+      1: 100070
+    second: mannequin_geo_calf_l
+  - first:
+      1: 100072
+    second: mannequin_geo_calf_r
+  - first:
+      1: 100074
+    second: mannequin_geo_chest
+  - first:
+      1: 100076
+    second: mannequin_geo_foot_l
+  - first:
+      1: 100078
+    second: mannequin_geo_foot_r
+  - first:
+      1: 100080
+    second: mannequin_geo_forearm_l
+  - first:
+      1: 100082
+    second: mannequin_geo_forearm_r
+  - first:
+      1: 100084
+    second: mannequin_geo_hand_l
+  - first:
+      1: 100086
+    second: mannequin_geo_hand_r
+  - first:
+      1: 100088
+    second: mannequin_geo_head
+  - first:
+      1: 100090
+    second: mannequin_geo_logo
+  - first:
+      1: 100092
+    second: mannequin_geo_lower_torso
+  - first:
+      1: 100094
+    second: mannequin_geo_neck
+  - first:
+      1: 100096
+    second: mannequin_geo_pelvis
+  - first:
+      1: 100098
+    second: mannequin_geo_thigh_l
+  - first:
+      1: 100100
+    second: mannequin_geo_thigh_r
+  - first:
+      1: 100102
+    second: middle_01_l
+  - first:
+      1: 100104
+    second: middle_01_r
+  - first:
+      1: 100106
+    second: middle_02_l
+  - first:
+      1: 100108
+    second: middle_02_r
+  - first:
+      1: 100110
+    second: middle_03_l
+  - first:
+      1: 100112
+    second: middle_03_l 1
+  - first:
+      1: 100114
+    second: middle_03_r
+  - first:
+      1: 100116
+    second: middle_03_r 1
+  - first:
+      1: 100118
+    second: neck_01
+  - first:
+      1: 100120
+    second: pelvis
+  - first:
+      1: 100122
+    second: pinky_01_l
+  - first:
+      1: 100124
+    second: pinky_01_r
+  - first:
+      1: 100126
+    second: pinky_02_l
+  - first:
+      1: 100128
+    second: pinky_02_r
+  - first:
+      1: 100130
+    second: pinky_03_l
+  - first:
+      1: 100132
+    second: pinky_03_l 1
+  - first:
+      1: 100134
+    second: pinky_03_r
+  - first:
+      1: 100136
+    second: pinky_03_r 1
+  - first:
+      1: 100138
+    second: ring_01_l
+  - first:
+      1: 100140
+    second: ring_01_r
+  - first:
+      1: 100142
+    second: ring_02_l
+  - first:
+      1: 100144
+    second: ring_02_r
+  - first:
+      1: 100146
+    second: ring_03_l
+  - first:
+      1: 100148
+    second: ring_03_l 1
+  - first:
+      1: 100150
+    second: ring_03_r
+  - first:
+      1: 100152
+    second: ring_03_r 1
+  - first:
+      1: 100154
+    second: root
+  - first:
+      1: 100156
+    second: spine_01
+  - first:
+      1: 100158
+    second: spine_02
+  - first:
+      1: 100160
+    second: spine_03
+  - first:
+      1: 100162
+    second: //RootNode
+  - first:
+      1: 100164
+    second: thigh_l
+  - first:
+      1: 100166
+    second: thigh_r
+  - first:
+      1: 100168
+    second: thigh_twist_01_l
+  - first:
+      1: 100170
+    second: thigh_twist_01_r
+  - first:
+      1: 100172
+    second: thumb_01_l
+  - first:
+      1: 100174
+    second: thumb_01_r
+  - first:
+      1: 100176
+    second: thumb_02_l
+  - first:
+      1: 100178
+    second: thumb_02_r
+  - first:
+      1: 100180
+    second: thumb_03_l
+  - first:
+      1: 100182
+    second: thumb_03_l 1
+  - first:
+      1: 100184
+    second: thumb_03_r
+  - first:
+      1: 100186
+    second: thumb_03_r 1
+  - first:
+      1: 100188
+    second: upperarm_l
+  - first:
+      1: 100190
+    second: upperarm_r
+  - first:
+      1: 100192
+    second: upperarm_twist_01_l
+  - first:
+      1: 100194
+    second: upperarm_twist_01_r
+  - first:
+      4: 400000
+    second: ball_l
+  - first:
+      4: 400002
+    second: ball_r
+  - first:
+      4: 400004
+    second: calf_l
+  - first:
+      4: 400006
+    second: calf_r
+  - first:
+      4: 400008
+    second: calf_twist_01_l
+  - first:
+      4: 400010
+    second: calf_twist_01_r
+  - first:
+      4: 400012
+    second: clavicle_l
+  - first:
+      4: 400014
+    second: clavicle_r
+  - first:
+      4: 400016
+    second: foot_l
+  - first:
+      4: 400018
+    second: foot_r
+  - first:
+      4: 400020
+    second: GEO
+  - first:
+      4: 400022
+    second: hand_l
+  - first:
+      4: 400024
+    second: hand_r
+  - first:
+      4: 400026
+    second: head
+  - first:
+      4: 400028
+    second: ik_foot_l
+  - first:
+      4: 400030
+    second: ik_foot_r
+  - first:
+      4: 400032
+    second: ik_foot_root
+  - first:
+      4: 400034
+    second: ik_hand_gun
+  - first:
+      4: 400036
+    second: ik_hand_l
+  - first:
+      4: 400038
+    second: ik_hand_r
+  - first:
+      4: 400040
+    second: ik_hand_root
+  - first:
+      4: 400042
+    second: index_01_l
+  - first:
+      4: 400044
+    second: index_01_r
+  - first:
+      4: 400046
+    second: index_02_l
+  - first:
+      4: 400048
+    second: index_02_r
+  - first:
+      4: 400050
+    second: index_03_l
+  - first:
+      4: 400052
+    second: index_03_l 1
+  - first:
+      4: 400054
+    second: index_03_r
+  - first:
+      4: 400056
+    second: index_03_r 1
+  - first:
+      4: 400058
+    second: lowerarm_l
+  - first:
+      4: 400060
+    second: lowerarm_r
+  - first:
+      4: 400062
+    second: lowerarm_twist_01_l
+  - first:
+      4: 400064
+    second: lowerarm_twist_01_r
+  - first:
+      4: 400066
+    second: mannequin_geo_arm_l
+  - first:
+      4: 400068
+    second: mannequin_geo_arm_r
+  - first:
+      4: 400070
+    second: mannequin_geo_calf_l
+  - first:
+      4: 400072
+    second: mannequin_geo_calf_r
+  - first:
+      4: 400074
+    second: mannequin_geo_chest
+  - first:
+      4: 400076
+    second: mannequin_geo_foot_l
+  - first:
+      4: 400078
+    second: mannequin_geo_foot_r
+  - first:
+      4: 400080
+    second: mannequin_geo_forearm_l
+  - first:
+      4: 400082
+    second: mannequin_geo_forearm_r
+  - first:
+      4: 400084
+    second: mannequin_geo_hand_l
+  - first:
+      4: 400086
+    second: mannequin_geo_hand_r
+  - first:
+      4: 400088
+    second: mannequin_geo_head
+  - first:
+      4: 400090
+    second: mannequin_geo_logo
+  - first:
+      4: 400092
+    second: mannequin_geo_lower_torso
+  - first:
+      4: 400094
+    second: mannequin_geo_neck
+  - first:
+      4: 400096
+    second: mannequin_geo_pelvis
+  - first:
+      4: 400098
+    second: mannequin_geo_thigh_l
+  - first:
+      4: 400100
+    second: mannequin_geo_thigh_r
+  - first:
+      4: 400102
+    second: middle_01_l
+  - first:
+      4: 400104
+    second: middle_01_r
+  - first:
+      4: 400106
+    second: middle_02_l
+  - first:
+      4: 400108
+    second: middle_02_r
+  - first:
+      4: 400110
+    second: middle_03_l
+  - first:
+      4: 400112
+    second: middle_03_l 1
+  - first:
+      4: 400114
+    second: middle_03_r
+  - first:
+      4: 400116
+    second: middle_03_r 1
+  - first:
+      4: 400118
+    second: neck_01
+  - first:
+      4: 400120
+    second: pelvis
+  - first:
+      4: 400122
+    second: pinky_01_l
+  - first:
+      4: 400124
+    second: pinky_01_r
+  - first:
+      4: 400126
+    second: pinky_02_l
+  - first:
+      4: 400128
+    second: pinky_02_r
+  - first:
+      4: 400130
+    second: pinky_03_l
+  - first:
+      4: 400132
+    second: pinky_03_l 1
+  - first:
+      4: 400134
+    second: pinky_03_r
+  - first:
+      4: 400136
+    second: pinky_03_r 1
+  - first:
+      4: 400138
+    second: ring_01_l
+  - first:
+      4: 400140
+    second: ring_01_r
+  - first:
+      4: 400142
+    second: ring_02_l
+  - first:
+      4: 400144
+    second: ring_02_r
+  - first:
+      4: 400146
+    second: ring_03_l
+  - first:
+      4: 400148
+    second: ring_03_l 1
+  - first:
+      4: 400150
+    second: ring_03_r
+  - first:
+      4: 400152
+    second: ring_03_r 1
+  - first:
+      4: 400154
+    second: root
+  - first:
+      4: 400156
+    second: spine_01
+  - first:
+      4: 400158
+    second: spine_02
+  - first:
+      4: 400160
+    second: spine_03
+  - first:
+      4: 400162
+    second: //RootNode
+  - first:
+      4: 400164
+    second: thigh_l
+  - first:
+      4: 400166
+    second: thigh_r
+  - first:
+      4: 400168
+    second: thigh_twist_01_l
+  - first:
+      4: 400170
+    second: thigh_twist_01_r
+  - first:
+      4: 400172
+    second: thumb_01_l
+  - first:
+      4: 400174
+    second: thumb_01_r
+  - first:
+      4: 400176
+    second: thumb_02_l
+  - first:
+      4: 400178
+    second: thumb_02_r
+  - first:
+      4: 400180
+    second: thumb_03_l
+  - first:
+      4: 400182
+    second: thumb_03_l 1
+  - first:
+      4: 400184
+    second: thumb_03_r
+  - first:
+      4: 400186
+    second: thumb_03_r 1
+  - first:
+      4: 400188
+    second: upperarm_l
+  - first:
+      4: 400190
+    second: upperarm_r
+  - first:
+      4: 400192
+    second: upperarm_twist_01_l
+  - first:
+      4: 400194
+    second: upperarm_twist_01_r
+  - first:
+      21: 2100000
+    second: body_m
+  - first:
+      21: 2100002
+    second: logo_m
+  - first:
+      43: 4300000
+    second: mannequin_geo_calf_l
+  - first:
+      43: 4300002
+    second: mannequin_geo_calf_r
+  - first:
+      43: 4300004
+    second: mannequin_geo_foot_l
+  - first:
+      43: 4300006
+    second: mannequin_geo_foot_r
+  - first:
+      43: 4300008
+    second: mannequin_geo_thigh_l
+  - first:
+      43: 4300010
+    second: mannequin_geo_thigh_r
+  - first:
+      43: 4300012
+    second: mannequin_geo_pelvis
+  - first:
+      43: 4300014
+    second: mannequin_geo_lower_torso
+  - first:
+      43: 4300016
+    second: mannequin_geo_neck
+  - first:
+      43: 4300018
+    second: mannequin_geo_head
+  - first:
+      43: 4300020
+    second: mannequin_geo_arm_r
+  - first:
+      43: 4300022
+    second: mannequin_geo_forearm_r
+  - first:
+      43: 4300024
+    second: mannequin_geo_hand_r
+  - first:
+      43: 4300026
+    second: mannequin_geo_arm_l
+  - first:
+      43: 4300028
+    second: mannequin_geo_forearm_l
+  - first:
+      43: 4300030
+    second: mannequin_geo_hand_l
+  - first:
+      43: 4300032
+    second: mannequin_geo_chest
+  - first:
+      43: 4300034
+    second: mannequin_geo_logo
+  - first:
+      74: 7400000
+    second: Sword1h_Guarding_Idle_1
+  - first:
+      137: 13700000
+    second: mannequin_geo_arm_l
+  - first:
+      137: 13700002
+    second: mannequin_geo_arm_r
+  - first:
+      137: 13700004
+    second: mannequin_geo_calf_l
+  - first:
+      137: 13700006
+    second: mannequin_geo_calf_r
+  - first:
+      137: 13700008
+    second: mannequin_geo_chest
+  - first:
+      137: 13700010
+    second: mannequin_geo_foot_l
+  - first:
+      137: 13700012
+    second: mannequin_geo_foot_r
+  - first:
+      137: 13700014
+    second: mannequin_geo_forearm_l
+  - first:
+      137: 13700016
+    second: mannequin_geo_forearm_r
+  - first:
+      137: 13700018
+    second: mannequin_geo_hand_l
+  - first:
+      137: 13700020
+    second: mannequin_geo_hand_r
+  - first:
+      137: 13700022
+    second: mannequin_geo_head
+  - first:
+      137: 13700024
+    second: mannequin_geo_logo
+  - first:
+      137: 13700026
+    second: mannequin_geo_lower_torso
+  - first:
+      137: 13700028
+    second: mannequin_geo_neck
+  - first:
+      137: 13700030
+    second: mannequin_geo_pelvis
+  - first:
+      137: 13700032
+    second: mannequin_geo_thigh_l
+  - first:
+      137: 13700034
+    second: mannequin_geo_thigh_r
   externalObjects: {}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -269,6 +739,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Sword1h_Guarding_Idle_1
       takeName: Sword1h_Guarding_Idle_1
+      internalID: 0
       firstFrame: 0
       lastFrame: 532
       wrapMode: 0
@@ -301,25 +772,32 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.01
-    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -328,10 +806,10 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 1
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human:
     - boneName: pelvis
       humanName: Hips
@@ -968,8 +1446,7 @@ ModelImporter:
     - name: middle_03_l 1
       parentName: middle_03_l
       position: {x: -0.033118974, y: 2.842171e-16, z: -3.5527136e-17}
-      rotation: {x: 0.0000000071781217, y: 0.000000019750741, z: 0.000000035347394,
-        w: 1}
+      rotation: {x: 0.0000000071781217, y: 0.000000019750741, z: 0.000000035347394, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: pinky_01_l
       parentName: hand_l
@@ -1039,8 +1516,7 @@ ModelImporter:
     - name: upperarm_twist_01_l
       parentName: upperarm_l
       position: {x: -0.005, y: 0, z: 0}
-      rotation: {x: 0.000000022351744, y: 0.000000029802326, z: 0.000000018626453,
-        w: 1}
+      rotation: {x: 0.000000022351744, y: 0.000000029802326, z: 0.000000018626453, w: 1}
       scale: {x: 1.0000005, y: 1.0000011, z: 1.0000012}
     - name: clavicle_r
       parentName: spine_03
@@ -1080,8 +1556,7 @@ ModelImporter:
     - name: index_03_r 1
       parentName: index_03_r
       position: {x: 0.028895183, y: 1.4210854e-16, z: 1.4210854e-16}
-      rotation: {x: -0.0000000071908075, y: 0.0000000077956415, z: -0.000000030334636,
-        w: 1}
+      rotation: {x: -0.0000000071908075, y: 0.0000000077956415, z: -0.000000030334636, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: middle_01_r
       parentName: hand_r
@@ -1101,8 +1576,7 @@ ModelImporter:
     - name: middle_03_r 1
       parentName: middle_03_r
       position: {x: 0.032418627, y: -1.4210854e-16, z: 0}
-      rotation: {x: 0.000000021630058, y: -0.0000000012338234, z: 0.000000010605572,
-        w: 1}
+      rotation: {x: 0.000000021630058, y: -0.0000000012338234, z: 0.000000010605572, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: pinky_01_r
       parentName: hand_r
@@ -1142,8 +1616,7 @@ ModelImporter:
     - name: ring_03_r 1
       parentName: ring_03_r
       position: {x: 0.028225066, y: 0, z: 1.7763568e-17}
-      rotation: {x: -0.00000002923117, y: 0.00000004592062, z: 0.000000015902998,
-        w: 1}
+      rotation: {x: -0.00000002923117, y: 0.00000004592062, z: 0.000000015902998, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: thumb_01_r
       parentName: hand_r
@@ -1252,14 +1725,17 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 1
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 1223ce2c4b7444044bb9290cb86d1e51,
-    type: 3}
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 1223ce2c4b7444044bb9290cb86d1e51, type: 3}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 3
   humanoidOversampling: 1
+  avatarSetup: 2
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
   additionalBone: 0
   userData: 
   assetBundleName: 
