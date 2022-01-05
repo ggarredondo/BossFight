@@ -9,8 +9,8 @@ public class BossScript : MonoBehaviour
     public TimedRandom strafe, straight;
 
     Animator anim;
-    float horizontal = 1f, target_horizontal, vertical = 0f, target_vertical, distance, target_angle, 
-        rotation_angle, turn_smooth_velocity, horizontal_smooth_velocity, vertical_smooth_velocity;
+    float horizontal = 1f, target_horizontal, vertical = 0f, target_vertical, distance, target_angle,
+        rotation_angle, turn_smooth_velocity;
     bool is_moving = false, is_walking = false, is_following = false;
 
     private void Start()
