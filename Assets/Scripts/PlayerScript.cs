@@ -17,7 +17,7 @@ public class PlayerScript : MonoBehaviour
 
     // movement variables
     private float horizontal, vertical, move_magnitude, turn_smooth_velocity, target_angle, rotation_angle,
-        dist_to_ground;
+        dist_to_ground, boss_defend_rng;
     private Vector3 direction, height_dir;
     private bool is_moving, is_walking, is_sprinting, is_dodge_pressed, is_jump_pressed, is_grounded, is_locked, is_block_pressed,
         is_dodging, is_blocking, is_jumping, is_landing, is_attacking, is_attack1_pressed, is_attack2_pressed; // animator variables
@@ -132,7 +132,9 @@ public class PlayerScript : MonoBehaviour
             anim.GetCurrentAnimatorStateInfo(0).IsName("Unlocked.Sprint Bash") || anim.GetCurrentAnimatorStateInfo(0).IsName("Jump Attack") 
             || anim.GetCurrentAnimatorStateInfo(0).IsName("Parrying.Riposte");
         no_movement = anim.GetCurrentAnimatorStateInfo(0).IsName("Unlocked.Sprinting Stop")  || is_dodging || is_blocking || is_landing || is_attacking;
-        boss.defend = is_attacking && anim.GetCurrentAnimatorStateInfo(0).normalizedTime <= 0.4f;
+        if (is_attack1_pressed || is_attack2_pressed)
+            boss_defend_rng = Random.value;
+        boss.defend = is_attacking && anim.GetCurrentAnimatorStateInfo(0).normalizedTime <= 0.4f && boss_defend_rng <= boss.defend_chance;
 
         // basic input
         horizontal = Input.GetAxis("Horizontal");

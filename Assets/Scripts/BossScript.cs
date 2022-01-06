@@ -56,7 +56,7 @@ public class BossScript : MonoBehaviour
         anim.SetBool("is_attacking", is_attacking);
         anim.SetFloat("attack_speed", attack_speed);
 
-        anim.SetBool("defend", defend && is_walking && Random.value <= defend_chance);
+        anim.SetBool("defend", defend && is_walking);
     }
 
     void FixedUpdate()
