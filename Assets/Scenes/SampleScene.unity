@@ -472,8 +472,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 361701462}
-  m_LocalRotation: {x: 0.01061563, y: -0.00002665691, z: 0.0000002829958, w: 0.9999437}
-  m_LocalPosition: {x: 0.0011285902, y: 1.7471899, z: -23.834251}
+  m_LocalRotation: {x: 0.011006733, y: -0.000026659018, z: 0.00000029344642, w: 0.99993944}
+  m_LocalPosition: {x: 0.0011286001, y: 1.749353, z: -23.834206}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1753805599}
@@ -983,12 +983,14 @@ MonoBehaviour:
   combat_distance: 5
   follow_distance: 12
   attack_speed: 1
+  defend_chance: 0.9
   horizontal_rng:
     cooldown: 2
   vertical_rng:
     cooldown: 1
   attack_rng:
     cooldown: 2
+  defend: 0
 --- !u!1 &1293930543
 GameObject:
   m_ObjectHideFlags: 3
@@ -1613,6 +1615,7 @@ MonoBehaviour:
   anim: {fileID: 1841483658}
   controller: {fileID: 1841483659}
   LockOnCamera: {fileID: 361701464}
+  boss: {fileID: 1216671517}
   speed: 1
   walk_range_min: 0
   walk_range_max: 0.5

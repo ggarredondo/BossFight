@@ -5,8 +5,9 @@ using UnityEngine;
 public class BossScript : MonoBehaviour
 {
     public Transform player_pos;
-    public float turn_smoothness, walk_smoothness, critical_distance, combat_distance, follow_distance, attack_speed;
+    public float turn_smoothness, walk_smoothness, critical_distance, combat_distance, follow_distance, attack_speed, defend_chance;
     public TimedRandom horizontal_rng, vertical_rng, attack_rng;
+    public bool defend = false;
 
     Animator anim;
     float horizontal = 1f, target_horizontal, vertical = 0f, target_vertical, distance, target_angle,
@@ -50,9 +51,12 @@ public class BossScript : MonoBehaviour
         is_attacking = anim.GetCurrentAnimatorStateInfo(0).IsName("Combo 1 1") || anim.GetCurrentAnimatorStateInfo(0).IsName("Combo 1 2") ||
             anim.GetCurrentAnimatorStateInfo(0).IsName("Combo 1 3") || anim.GetCurrentAnimatorStateInfo(0).IsName("Combo 2 1") ||
             anim.GetCurrentAnimatorStateInfo(0).IsName("Combo 2 2") || anim.GetCurrentAnimatorStateInfo(0).IsName("Combo 2 3");
+        
         anim.SetBool("attack", is_walking && attack_rng.one_use_value > 0.5f);
         anim.SetBool("is_attacking", is_attacking);
         anim.SetFloat("attack_speed", attack_speed);
+
+        anim.SetBool("defend", defend && is_walking && Random.value <= defend_chance);
     }
 
     void FixedUpdate()

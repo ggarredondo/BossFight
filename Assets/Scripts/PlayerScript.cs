@@ -7,6 +7,7 @@ public class PlayerScript : MonoBehaviour
     public Animator anim;
     public CharacterController controller;
     public CinemachineVirtualCamera LockOnCamera;
+    public BossScript boss;
 
     public float speed = 1f, walk_range_min = 0f, walk_range_max = 0.5f;
     public float turn_smoothness = 0.14f;
@@ -79,7 +80,7 @@ public class PlayerScript : MonoBehaviour
     private void Action()
     {
         is_dodge_pressed = Input.GetButtonDown("Dodge") && is_grounded && !is_dodging && !is_blocking && !is_jumping && !is_landing;
-        is_jump_pressed = Input.GetButtonDown("Dodge") && is_grounded && !is_dodging && !is_blocking && !is_jumping && !is_moving;
+        is_jump_pressed = Input.GetButtonDown("Jump") && is_grounded && !is_dodging && !is_blocking && !is_jumping;
         if (is_jump_pressed)
             height_dir.y += jump_height;
         is_block_pressed = is_grounded && Input.GetButtonDown("Block") && !is_dodging && !is_blocking && !is_jumping;
@@ -131,6 +132,7 @@ public class PlayerScript : MonoBehaviour
             anim.GetCurrentAnimatorStateInfo(0).IsName("Unlocked.Sprint Bash") || anim.GetCurrentAnimatorStateInfo(0).IsName("Jump Attack") 
             || anim.GetCurrentAnimatorStateInfo(0).IsName("Parrying.Riposte");
         no_movement = anim.GetCurrentAnimatorStateInfo(0).IsName("Unlocked.Sprinting Stop")  || is_dodging || is_blocking || is_landing || is_attacking;
+        boss.defend = is_attacking && anim.GetCurrentAnimatorStateInfo(0).normalizedTime <= 0.4f;
 
         // basic input
         horizontal = Input.GetAxis("Horizontal");
