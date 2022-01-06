@@ -18,6 +18,14 @@ public class TimedRandom
         }
     }
 
+    public float one_use_value { 
+        get {
+            float new_value = value;
+            _value = 0;
+            return new_value;
+        }
+    }
+
     public float integer {
         get {
             return Mathf.Round(value);

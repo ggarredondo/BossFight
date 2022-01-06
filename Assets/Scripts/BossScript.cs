@@ -5,13 +5,13 @@ using UnityEngine;
 public class BossScript : MonoBehaviour
 {
     public Transform player_pos;
-    public float turn_smoothness, walk_smoothness, critical_distance, combat_distance, follow_distance;
-    public TimedRandom strafe, straight;
+    public float turn_smoothness, walk_smoothness, critical_distance, combat_distance, follow_distance, attack_speed;
+    public TimedRandom horizontal_rng, vertical_rng, attack_rng;
 
     Animator anim;
     float horizontal = 1f, target_horizontal, vertical = 0f, target_vertical, distance, target_angle,
         rotation_angle, turn_smooth_velocity;
-    bool is_moving = false, is_walking = false, is_following = false;
+    bool is_moving = false, is_walking = false, is_following = false, is_attacking;
 
     private void Start()
     {
@@ -28,15 +28,16 @@ public class BossScript : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, rotation_angle, 0f);
 
         // Random movement at combat distance
-        target_horizontal = strafe.value > 0.5f ? 1f : -1f;
+        target_horizontal = horizontal_rng.value > 0.5f ? 1f : -1f;
         horizontal = Mathf.SmoothStep(horizontal, target_horizontal, walk_smoothness * Time.deltaTime);
-        target_vertical = Mathf.Round(straight.Range(-1f, 1f));
+        target_vertical = Mathf.Round(vertical_rng.Range(-1f, 1f));
         vertical = Mathf.SmoothStep(vertical, target_vertical, walk_smoothness * Time.deltaTime);
     }
 
     private void Animation() 
     {
         anim.SetBool("out_of_combat", distance > follow_distance);
+        anim.SetBool("in_critical_distance", distance <= critical_distance);
 
         is_following = distance >= combat_distance && distance <= follow_distance;
         anim.SetBool("is_following", is_following);
@@ -45,6 +46,13 @@ public class BossScript : MonoBehaviour
         anim.SetBool("is_walking", is_walking);
         anim.SetFloat("horizontal", horizontal);
         anim.SetFloat("vertical", vertical);
+
+        is_attacking = anim.GetCurrentAnimatorStateInfo(0).IsName("Combo 1 1") || anim.GetCurrentAnimatorStateInfo(0).IsName("Combo 1 2") ||
+            anim.GetCurrentAnimatorStateInfo(0).IsName("Combo 1 3") || anim.GetCurrentAnimatorStateInfo(0).IsName("Combo 2 1") ||
+            anim.GetCurrentAnimatorStateInfo(0).IsName("Combo 2 2") || anim.GetCurrentAnimatorStateInfo(0).IsName("Combo 2 3");
+        anim.SetBool("attack", is_walking && attack_rng.one_use_value > 0.5f);
+        anim.SetBool("is_attacking", is_attacking);
+        anim.SetFloat("attack_speed", attack_speed);
     }
 
     void FixedUpdate()
