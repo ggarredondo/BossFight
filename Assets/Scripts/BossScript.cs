@@ -62,7 +62,6 @@ public class BossScript : MonoBehaviour
     void FixedUpdate()
     {
         distance = Vector3.Distance(transform.position, player_pos.transform.position);
-        Debug.Log(distance); // <------------- delete
 
         Animation();
         Movement();

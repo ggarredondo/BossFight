@@ -125,7 +125,7 @@ public class PlayerScript : MonoBehaviour
             anim.GetCurrentAnimatorStateInfo(0).IsName("Parrying.Parrying Success") ||
             anim.GetCurrentAnimatorStateInfo(0).IsName("Parrying.Parrying Late");
         is_jumping = anim.GetCurrentAnimatorStateInfo(0).IsName("Jumping");
-        is_landing = anim.GetCurrentAnimatorStateInfo(0).IsName("Landing");
+        is_landing = anim.GetCurrentAnimatorStateInfo(0).IsName("Landing") || anim.GetCurrentAnimatorStateInfo(0).IsName("Jump Attack Landing");
         is_attacking = anim.GetCurrentAnimatorStateInfo(0).IsName("Attacking.Attack2_combo1") || anim.GetCurrentAnimatorStateInfo(0).IsName("Attacking.Attack2_combo2")
             || anim.GetCurrentAnimatorStateInfo(0).IsName("Attacking.Attack2_combo3") || anim.GetCurrentAnimatorStateInfo(0).IsName("Attacking.Attack1_combo1") ||
             anim.GetCurrentAnimatorStateInfo(0).IsName("Attacking.Attack1_combo2") || anim.GetCurrentAnimatorStateInfo(0).IsName("Attacking.Attack1_combo3") || 
