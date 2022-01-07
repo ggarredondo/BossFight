@@ -877,6 +877,12 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: out_of_combat
     m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: in_critical_distance
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: is_walking
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -3260973601810093059}
   m_Solo: 0
