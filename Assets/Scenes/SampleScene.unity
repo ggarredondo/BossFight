@@ -290,7 +290,7 @@ GameObject:
   - component: {fileID: 134011385}
   - component: {fileID: 134011387}
   - component: {fileID: 134011386}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Sword Hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -319,7 +319,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 134011384}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 0.0000001
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 0
@@ -549,8 +549,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 361701462}
-  m_LocalRotation: {x: 0.010615591, y: -0.00002667351, z: 0.00000028317098, w: 0.9999437}
-  m_LocalPosition: {x: 0.001128682, y: 1.7471895, z: -23.834251}
+  m_LocalRotation: {x: 0.010615591, y: -0.000026640417, z: 0.00000028281968, w: 0.9999437}
+  m_LocalPosition: {x: 0.0011284989, y: 1.7471895, z: -23.834251}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1753805599}
@@ -887,7 +887,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.055497665, y: 0.000000015652374, z: 4.584667e-10, w: 0.99845886}
+  m_LocalRotation: {x: 0.055497665, y: -0.000000015653743, z: -4.5827778e-10, w: 0.99845886}
   m_LocalPosition: {x: 0, y: 1.6748362, z: -23.365303}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -952,7 +952,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 977226207}
-  m_LocalRotation: {x: 0.053534374, y: 0.000026606496, z: -0.0000019936597, w: 0.99856603}
+  m_LocalRotation: {x: 0.053534374, y: 0.000026597916, z: -0.000001993017, w: 0.99856603}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1151,6 +1151,7 @@ MonoBehaviour:
   follow_distance: 12
   attack_speed: 1
   defend_chance: 0.7
+  atk_time_end: 0.4
   horizontal_rng:
     cooldown: 2
   vertical_rng:
@@ -1158,6 +1159,71 @@ MonoBehaviour:
   attack_rng:
     cooldown: 2
   defend: 0
+  SwordHitbox: {fileID: 134011384}
+  UpperbodyHurtbox: {fileID: 722796547}
+  LowerbodyHurtbox: {fileID: 1962812589}
+--- !u!1 &1281004870
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1281004871}
+  - component: {fileID: 1281004872}
+  - component: {fileID: 1281004873}
+  m_Layer: 0
+  m_Name: Bash Hitbox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1281004871
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281004870}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2021634217}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1281004872
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281004870}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.2
+  m_Height: 1
+  m_Direction: 0
+  m_Center: {x: 0, y: 0, z: -0.1}
+--- !u!54 &1281004873
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281004870}
+  serializedVersion: 2
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1293930543
 GameObject:
   m_ObjectHideFlags: 3
@@ -1553,7 +1619,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1578788602}
-  m_LocalRotation: {x: 0.030357543, y: 0.000026643436, z: -0.0000013758566, w: 0.99953914}
+  m_LocalRotation: {x: 0.030357543, y: 0.000026639142, z: -0.0000013756347, w: 0.99953914}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1838,12 +1904,17 @@ MonoBehaviour:
   controller: {fileID: 1841483659}
   LockOnCamera: {fileID: 361701464}
   boss: {fileID: 1216671517}
+  SwordHitbox: {fileID: 1922385056}
+  BashHitbox: {fileID: 1281004870}
+  UpperbodyHurtbox: {fileID: 1586574097}
+  LowerbodyHurtbox: {fileID: 376659654}
   speed: 1
   walk_range_min: 0
   walk_range_max: 0.5
   turn_smoothness: 0.14
   jump_height: 3.5
   atk_side: 0
+  atk_time_end: 0.4
   parry_late: 0
 --- !u!95 &1841483658
 Animator:
@@ -1893,7 +1964,7 @@ GameObject:
   - component: {fileID: 1922385057}
   - component: {fileID: 1922385058}
   - component: {fileID: 1922385059}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Sword Hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1936,7 +2007,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1922385056}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 0.0000001
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 0
@@ -2077,6 +2148,11 @@ CapsuleCollider:
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: c7fb57da2b8a36643a6cb1e70178a745, type: 3}
   m_PrefabInstance: {fileID: 1204139223}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2021634217 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400010, guid: af58dc7d0a875334ab3339a086077912, type: 3}
+  m_PrefabInstance: {fileID: 2055597691}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2055597691
 PrefabInstance:

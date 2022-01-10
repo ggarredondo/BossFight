@@ -8,11 +8,13 @@ public class PlayerScript : MonoBehaviour
     public CharacterController controller;
     public CinemachineVirtualCamera LockOnCamera;
     public BossScript boss;
+    public GameObject SwordHitbox, BashHitbox, UpperbodyHurtbox, LowerbodyHurtbox;
 
     public float speed = 1f, walk_range_min = 0f, walk_range_max = 0.5f;
     public float turn_smoothness = 0.14f;
     public float jump_height = 4f;
     public float atk_side;
+    public float atk_time_end = 0.4f;
     public bool parry_late;
 
     // movement variables
@@ -20,7 +22,7 @@ public class PlayerScript : MonoBehaviour
         dist_to_ground, boss_defend_rng;
     private Vector3 direction, height_dir;
     private bool is_moving, is_walking, is_sprinting, is_dodge_pressed, is_jump_pressed, is_grounded, is_locked, is_block_pressed,
-        is_dodging, is_blocking, is_jumping, is_landing, is_attacking, is_attack1_pressed, is_attack2_pressed; // animator variables
+        is_dodging, is_blocking, is_jumping, is_landing, is_attacking, is_attack1_pressed, is_attack2_pressed, is_bashing, is_atk_ended; // animator variables
     private bool no_movement; // variable for situations where I don't want the character to be able to move
 
     private void Start() {
@@ -117,6 +119,15 @@ public class PlayerScript : MonoBehaviour
         anim.SetBool("is_locked", is_locked);
     }
 
+    private void Hitbox() {
+        is_bashing = anim.GetCurrentAnimatorStateInfo(0).IsName("Unlocked.Sprint Bash");
+        is_atk_ended = anim.GetCurrentAnimatorStateInfo(0).normalizedTime > atk_time_end;
+        UpperbodyHurtbox.SetActive(!is_dodging);
+        LowerbodyHurtbox.SetActive(!is_dodging && !is_jumping);
+        SwordHitbox.SetActive(is_attacking && !is_bashing && !is_atk_ended);
+        BashHitbox.SetActive(is_bashing && !is_atk_ended);
+    }
+
     void Update()
     {
         is_grounded = IsGrounded();
@@ -134,7 +145,7 @@ public class PlayerScript : MonoBehaviour
         no_movement = anim.GetCurrentAnimatorStateInfo(0).IsName("Unlocked.Sprinting Stop")  || is_dodging || is_blocking || is_landing || is_attacking;
         if (is_attack1_pressed || is_attack2_pressed)
             boss_defend_rng = Random.value;
-        boss.defend = is_attacking && anim.GetCurrentAnimatorStateInfo(0).normalizedTime <= 0.4f && boss_defend_rng <= boss.defend_chance;
+        boss.defend = is_attacking && anim.GetCurrentAnimatorStateInfo(0).normalizedTime <= atk_time_end && boss_defend_rng <= boss.defend_chance;
 
         // basic input
         horizontal = Input.GetAxis("Horizontal");
@@ -145,6 +156,7 @@ public class PlayerScript : MonoBehaviour
         Movement();
         Fall();
         Animation();
+        Hitbox();
 
         // final movement
         controller.Move(height_dir * Time.deltaTime);

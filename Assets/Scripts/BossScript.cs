@@ -5,14 +5,15 @@ using UnityEngine;
 public class BossScript : MonoBehaviour
 {
     public Transform player_pos;
-    public float turn_smoothness, walk_smoothness, critical_distance, combat_distance, follow_distance, attack_speed, defend_chance;
+    public float turn_smoothness, walk_smoothness, critical_distance, combat_distance, follow_distance, attack_speed, defend_chance, atk_time_end = 0.4f;
     public TimedRandom horizontal_rng, vertical_rng, attack_rng;
     public bool defend = false;
+    public GameObject SwordHitbox, UpperbodyHurtbox, LowerbodyHurtbox;
 
-    Animator anim;
-    float horizontal = 1f, target_horizontal, vertical = 0f, target_vertical, distance, target_angle,
+    private Animator anim;
+    private float horizontal = 1f, target_horizontal, vertical = 0f, target_vertical, distance, target_angle,
         rotation_angle, turn_smooth_velocity;
-    bool is_moving = false, is_walking = false, is_following = false, is_attacking;
+    private bool is_moving = false, is_walking = false, is_following = false, is_attacking, is_dodging;
 
     private void Start()
     {
@@ -59,11 +60,20 @@ public class BossScript : MonoBehaviour
         anim.SetBool("defend", defend);
     }
 
+    private void Hitbox()
+    {
+        is_dodging = anim.GetCurrentAnimatorStateInfo(0).IsName("Dodging");
+        UpperbodyHurtbox.SetActive(!is_dodging);
+        LowerbodyHurtbox.SetActive(!is_dodging);
+        SwordHitbox.SetActive(is_attacking && anim.GetCurrentAnimatorStateInfo(0).normalizedTime <= atk_time_end);
+    }
+
     void FixedUpdate()
     {
         distance = Vector3.Distance(transform.position, player_pos.transform.position);
 
         Animation();
         Movement();
+        Hitbox();
     }
 }
