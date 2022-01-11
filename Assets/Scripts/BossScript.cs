@@ -38,7 +38,7 @@ public class BossScript : MonoBehaviour
 
     private void Animation() 
     {
-        on_ground = anim.GetCurrentAnimatorStateInfo(0).IsName("Bashed");
+        on_ground = anim.GetCurrentAnimatorStateInfo(0).IsName("Bashed") || anim.GetCurrentAnimatorStateInfo(0).IsName("Death after Bash");
         is_being_parried = anim.GetCurrentAnimatorStateInfo(0).IsName("Parried") || anim.GetCurrentAnimatorStateInfo(0).IsName("Recovery");
 
         anim.SetBool("out_of_combat", distance > follow_distance || player.is_hurt || player.is_hurt_legs);
