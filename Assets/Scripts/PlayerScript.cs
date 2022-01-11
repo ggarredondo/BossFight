@@ -117,6 +117,7 @@ public class PlayerScript : MonoBehaviour
         anim.SetBool("is_attacking", is_attacking);
         anim.SetFloat("atk_side", atk_side);
         anim.SetBool("parry_late", parry_late);
+        parry_late = false;
         anim.SetBool("is_locked", is_locked);
 
         anim.SetBool("is_hurt", is_hurt);
@@ -126,7 +127,7 @@ public class PlayerScript : MonoBehaviour
     private void Hitbox() {
         is_bashing = anim.GetCurrentAnimatorStateInfo(0).IsName("Unlocked.Sprint Bash");
         is_atk_ended = anim.GetCurrentAnimatorStateInfo(0).normalizedTime > atk_time_end;
-        UpperbodyHurtbox.SetActive(!is_dodging);
+        UpperbodyHurtbox.SetActive(!is_dodging && !BlockHurtbox.activeInHierarchy);
         LowerbodyHurtbox.SetActive(!is_dodging && !is_jumping);
         SwordHitbox.SetActive(is_attacking && !is_bashing && !is_atk_ended);
         BashHitbox.SetActive(is_bashing && !is_atk_ended);

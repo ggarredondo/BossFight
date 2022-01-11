@@ -14,7 +14,7 @@ public class BossScript : MonoBehaviour
     private Animator anim;
     private float horizontal = 1f, target_horizontal, vertical = 0f, target_vertical, distance, target_angle,
         rotation_angle, turn_smooth_velocity;
-    private bool is_moving = false, is_walking = false, is_following = false, is_attacking, on_ground = false;
+    private bool is_moving = false, is_walking = false, is_following = false, is_attacking, on_ground = false, is_being_parried;
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -39,6 +39,7 @@ public class BossScript : MonoBehaviour
     private void Animation() 
     {
         on_ground = anim.GetCurrentAnimatorStateInfo(0).IsName("Bashed");
+        is_being_parried = anim.GetCurrentAnimatorStateInfo(0).IsName("Parried") || anim.GetCurrentAnimatorStateInfo(0).IsName("Recovery");
 
         anim.SetBool("out_of_combat", distance > follow_distance || player.is_hurt || player.is_hurt_legs);
         anim.SetBool("in_critical_distance", distance <= critical_distance);
@@ -55,7 +56,7 @@ public class BossScript : MonoBehaviour
             anim.GetCurrentAnimatorStateInfo(0).IsName("Combo 1 3") || anim.GetCurrentAnimatorStateInfo(0).IsName("Combo 2 1") ||
             anim.GetCurrentAnimatorStateInfo(0).IsName("Combo 2 2") || anim.GetCurrentAnimatorStateInfo(0).IsName("Combo 2 3");
         
-        anim.SetBool("attack", is_walking && attack_rng.one_use_value > 0.5f && !on_ground);
+        anim.SetBool("attack", is_walking && attack_rng.one_use_value > 0.5f && !on_ground && !is_being_parried);
         anim.SetBool("is_attacking", is_attacking);
         anim.SetFloat("attack_speed", attack_speed);
 
@@ -81,6 +82,7 @@ public class BossScript : MonoBehaviour
     void FixedUpdate()
     {
         distance = Vector3.Distance(transform.position, player_pos.transform.position);
+        Debug.Log(distance);
 
         Animation();
         Movement();
