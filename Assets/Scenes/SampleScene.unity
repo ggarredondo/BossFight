@@ -549,8 +549,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 361701462}
-  m_LocalRotation: {x: 0.009327472, y: -0.000026668597, z: 0.00000024876144, w: 0.9999565}
-  m_LocalPosition: {x: 0.0011286605, y: 1.6900645, z: -23.834393}
+  m_LocalRotation: {x: 0.009334474, y: -0.000026658005, z: 0.0000002488493, w: 0.9999564}
+  m_LocalPosition: {x: 0.001128602, y: 1.6901034, z: -23.834394}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1753805599}
@@ -2026,7 +2026,7 @@ MonoBehaviour:
   parry_late: 0
   is_hurt: 0
   is_hurt_legs: 0
-  god_mode: 0
+  god_mode: 1
 --- !u!95 &1841483658
 Animator:
   serializedVersion: 3
