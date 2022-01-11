@@ -1,5 +1,6 @@
 using Cinemachine;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -8,14 +9,14 @@ public class PlayerScript : MonoBehaviour
     public CharacterController controller;
     public CinemachineVirtualCamera LockOnCamera;
     public BossScript boss;
-    public GameObject SwordHitbox, BashHitbox, UpperbodyHurtbox, LowerbodyHurtbox;
+    public GameObject SwordHitbox, BlockHurtbox, BashHitbox, UpperbodyHurtbox, LowerbodyHurtbox;
 
     public float speed = 1f, walk_range_min = 0f, walk_range_max = 0.5f;
     public float turn_smoothness = 0.14f;
     public float jump_height = 4f;
     public float atk_side;
-    public float atk_time_end = 0.4f;
-    public bool parry_late;
+    public float atk_time_end = 0.4f, parry_window = 0.3f, death_time = 2f;
+    public bool parry_late = false, is_hurt = false, is_hurt_legs = false, god_mode = false;
 
     // movement variables
     private float horizontal, vertical, move_magnitude, turn_smooth_velocity, target_angle, rotation_angle,
@@ -81,13 +82,13 @@ public class PlayerScript : MonoBehaviour
 
     private void Action()
     {
-        is_dodge_pressed = Input.GetButtonDown("Dodge") && is_grounded && !is_dodging && !is_blocking && !is_jumping && !is_landing;
-        is_jump_pressed = Input.GetButtonDown("Jump") && is_grounded && !is_dodging && !is_blocking && !is_jumping;
+        is_dodge_pressed = Input.GetButtonDown("Dodge") && is_grounded && !is_dodging && !is_blocking && !is_jumping && !is_landing && !is_hurt && !is_hurt_legs;
+        is_jump_pressed = Input.GetButtonDown("Jump") && is_grounded && !is_dodging && !is_blocking && !is_jumping && !is_hurt && !is_hurt_legs;
         if (is_jump_pressed)
             height_dir.y += jump_height;
-        is_block_pressed = is_grounded && Input.GetButtonDown("Block") && !is_dodging && !is_blocking && !is_jumping;
-        is_attack1_pressed = Input.GetButtonDown("Attack1") && !is_dodging;
-        is_attack2_pressed = UseRT() && !is_dodging;
+        is_block_pressed = is_grounded && Input.GetButtonDown("Block") && !is_dodging && !is_blocking && !is_jumping && !is_hurt && !is_hurt_legs;
+        is_attack1_pressed = Input.GetButtonDown("Attack1") && !is_dodging && !is_hurt && !is_hurt_legs;
+        is_attack2_pressed = UseRT() && !is_dodging && !is_hurt && !is_hurt_legs;
         if (Input.GetButtonDown("LockOn")) { // toggle lock on
             is_locked = !is_locked;
             LockOnCamera.Priority = System.Convert.ToInt32(is_locked);
@@ -117,6 +118,9 @@ public class PlayerScript : MonoBehaviour
         anim.SetFloat("atk_side", atk_side);
         anim.SetBool("parry_late", parry_late);
         anim.SetBool("is_locked", is_locked);
+
+        anim.SetBool("is_hurt", is_hurt);
+        anim.SetBool("is_hurt_legs", is_hurt_legs);
     }
 
     private void Hitbox() {
@@ -126,6 +130,7 @@ public class PlayerScript : MonoBehaviour
         LowerbodyHurtbox.SetActive(!is_dodging && !is_jumping);
         SwordHitbox.SetActive(is_attacking && !is_bashing && !is_atk_ended);
         BashHitbox.SetActive(is_bashing && !is_atk_ended);
+        BlockHurtbox.SetActive(is_blocking && anim.GetCurrentAnimatorStateInfo(0).normalizedTime <= parry_window);
     }
 
     void Update()
@@ -142,7 +147,7 @@ public class PlayerScript : MonoBehaviour
             anim.GetCurrentAnimatorStateInfo(0).IsName("Attacking.Attack1_combo2") || anim.GetCurrentAnimatorStateInfo(0).IsName("Attacking.Attack1_combo3") || 
             anim.GetCurrentAnimatorStateInfo(0).IsName("Unlocked.Sprint Bash") || anim.GetCurrentAnimatorStateInfo(0).IsName("Jump Attack") 
             || anim.GetCurrentAnimatorStateInfo(0).IsName("Parrying.Riposte");
-        no_movement = anim.GetCurrentAnimatorStateInfo(0).IsName("Unlocked.Sprinting Stop")  || is_dodging || is_blocking || is_landing || is_attacking;
+        no_movement = anim.GetCurrentAnimatorStateInfo(0).IsName("Unlocked.Sprinting Stop")  || is_dodging || is_blocking || is_landing || is_attacking || is_hurt || is_hurt_legs;
         if (is_attack1_pressed || is_attack2_pressed)
             boss_defend_rng = Random.value;
         boss.defend = is_attacking && anim.GetCurrentAnimatorStateInfo(0).normalizedTime <= atk_time_end && boss_defend_rng <= boss.defend_chance;
@@ -160,5 +165,9 @@ public class PlayerScript : MonoBehaviour
 
         // final movement
         controller.Move(height_dir * Time.deltaTime);
+
+        if ((anim.GetCurrentAnimatorStateInfo(0).IsName("Death Normal") || anim.GetCurrentAnimatorStateInfo(0).IsName("Death Legs")) 
+            && anim.GetCurrentAnimatorStateInfo(0).normalizedTime > death_time)
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
