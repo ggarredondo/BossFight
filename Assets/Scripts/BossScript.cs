@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BossScript : MonoBehaviour
 {
     public Transform player_pos;
     public PlayerScript player;
-    public float turn_smoothness, walk_smoothness, critical_distance, combat_distance, follow_distance, attack_speed, base_defend_chance, defend_chance, atk_time_end = 0.4f;
+    public float turn_smoothness, walk_smoothness, critical_distance, combat_distance, follow_distance, attack_speed, base_defend_chance, defend_chance, atk_time_end = 0.4f, death_time;
     public TimedRandom horizontal_rng, vertical_rng, attack_rng;
     public bool defend = false, is_hurt = false, is_bashed = false, is_parried = false;
     public GameObject SwordHitbox, UpperbodyHurtbox, LowerbodyHurtbox;
@@ -90,5 +91,10 @@ public class BossScript : MonoBehaviour
         Animation();
         Movement();
         Hitbox();
+
+        if ((anim.GetCurrentAnimatorStateInfo(0).IsName("Death") ||
+            anim.GetCurrentAnimatorStateInfo(0).IsName("Death after Bash")) 
+            && anim.GetCurrentAnimatorStateInfo(0).normalizedTime > death_time)
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
