@@ -6,7 +6,7 @@ public class BossScript : MonoBehaviour
 {
     public Transform player_pos;
     public PlayerScript player;
-    public float turn_smoothness, walk_smoothness, critical_distance, combat_distance, follow_distance, attack_speed, defend_chance, atk_time_end = 0.4f;
+    public float turn_smoothness, walk_smoothness, critical_distance, combat_distance, follow_distance, attack_speed, base_defend_chance, defend_chance, atk_time_end = 0.4f;
     public TimedRandom horizontal_rng, vertical_rng, attack_rng;
     public bool defend = false, is_hurt = false, is_bashed = false, is_parried = false;
     public GameObject SwordHitbox, UpperbodyHurtbox, LowerbodyHurtbox;
@@ -82,6 +82,10 @@ public class BossScript : MonoBehaviour
     void FixedUpdate()
     {
         distance = Vector3.Distance(transform.position, player_pos.transform.position);
+        if (is_attacking || on_ground || is_being_parried)
+            defend_chance = base_defend_chance * 0.5f;
+        else
+            defend_chance = base_defend_chance;
 
         Animation();
         Movement();
