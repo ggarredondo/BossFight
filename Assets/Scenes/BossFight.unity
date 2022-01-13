@@ -1689,7 +1689,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.109367594, y: 0.00048536996, z: -0.000053404096, w: 0.99400127}
+  m_LocalRotation: {x: 0.109367594, y: 0.0004853348, z: -0.000053400247, w: 0.99400127}
   m_LocalPosition: {x: -0.0036573093, y: 2.0916998, z: -20.545082}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1827,7 +1827,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 977226207}
-  m_LocalRotation: {x: 0.0975578, y: 0.00039324258, z: -0.000052184896, w: 0.99522984}
+  m_LocalRotation: {x: 0.0975578, y: 0.00039320742, z: -0.00005218023, w: 0.99522984}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2548,15 +2548,18 @@ MonoBehaviour:
   player: {fileID: 1841483657}
   turn_smoothness: 0.15
   walk_smoothness: 2
-  critical_distance: 2
+  critical_distance: 3
   combat_distance: 5
+  jump_distance: 6
   follow_distance: 12
   attack_speed: 1
   base_defend_chance: 0.8
   low_defend_chance: 0.5
   high_defend_chance: 1
   defend_chance: 0
+  base_atk_time_end: 0.5
   atk_time_end: 0.4
+  jump_time_end: 1
   death_time: 1.5
   horizontal_rng:
     cooldown: 2
@@ -3326,7 +3329,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1578788602}
-  m_LocalRotation: {x: 0.07444649, y: 0.00039434672, z: -0.000043049262, w: 0.997225}
+  m_LocalRotation: {x: 0.07444649, y: 0.0003943125, z: -0.00004304552, w: 0.997225}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

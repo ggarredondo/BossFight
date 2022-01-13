@@ -7,8 +7,8 @@ public class BossScript : MonoBehaviour
 {
     public Transform player_pos;
     public PlayerScript player;
-    public float turn_smoothness, walk_smoothness, critical_distance, combat_distance, follow_distance, attack_speed, 
-        base_defend_chance, low_defend_chance, high_defend_chance, defend_chance, atk_time_end = 0.4f, death_time;
+    public float turn_smoothness, walk_smoothness, critical_distance, combat_distance, jump_distance, follow_distance, attack_speed, 
+        base_defend_chance, low_defend_chance, high_defend_chance, defend_chance, base_atk_time_end = 0.4f, atk_time_end, jump_time_end, death_time;
     public TimedRandom horizontal_rng, vertical_rng, attack_rng, taunt_rng;
     public bool defend = false, is_hurt = false, is_bashed = false, is_parried = false;
     public GameObject SwordHitbox, UpperbodyHurtbox, LowerbodyHurtbox;
@@ -17,6 +17,7 @@ public class BossScript : MonoBehaviour
     private float horizontal = 1f, target_horizontal, vertical = 0f, target_vertical, distance, target_angle,
         rotation_angle, turn_smooth_velocity;
     private bool is_moving = false, is_walking = false, is_following = false, is_attacking, on_ground = false, is_being_parried, is_taunting;
+
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -46,6 +47,7 @@ public class BossScript : MonoBehaviour
 
         anim.SetBool("out_of_combat", distance > follow_distance || player.is_hurt || player.is_hurt_legs);
         anim.SetBool("in_critical_distance", distance <= critical_distance);
+        anim.SetBool("in_jump_distance", distance >= combat_distance && distance <= jump_distance);
 
         is_following = distance >= combat_distance && distance <= follow_distance;
         anim.SetBool("is_following", is_following);
@@ -57,9 +59,10 @@ public class BossScript : MonoBehaviour
 
         is_attacking = anim.GetCurrentAnimatorStateInfo(0).IsName("Combo 1 1") || anim.GetCurrentAnimatorStateInfo(0).IsName("Combo 1 2") ||
             anim.GetCurrentAnimatorStateInfo(0).IsName("Combo 1 3") || anim.GetCurrentAnimatorStateInfo(0).IsName("Combo 2 1") ||
-            anim.GetCurrentAnimatorStateInfo(0).IsName("Combo 2 2") || anim.GetCurrentAnimatorStateInfo(0).IsName("Combo 2 3");
+            anim.GetCurrentAnimatorStateInfo(0).IsName("Combo 2 2") || anim.GetCurrentAnimatorStateInfo(0).IsName("Combo 2 3") ||
+            anim.GetCurrentAnimatorStateInfo(0).IsName("Achilles");
         
-        anim.SetBool("attack", is_walking && attack_rng.one_use_value > 0.5f && !on_ground && !is_being_parried);
+        anim.SetBool("attack", attack_rng.one_use_value > 0.5f && !on_ground && !is_being_parried);
         anim.SetBool("is_attacking", is_attacking);
         anim.SetFloat("attack_speed", attack_speed);
 
@@ -82,6 +85,10 @@ public class BossScript : MonoBehaviour
     {
         UpperbodyHurtbox.SetActive(!defend);
         LowerbodyHurtbox.SetActive(!defend);
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Achilles"))
+            atk_time_end = jump_time_end;
+        else
+            atk_time_end = base_atk_time_end;
         SwordHitbox.SetActive(is_attacking && anim.GetCurrentAnimatorStateInfo(0).normalizedTime <= atk_time_end);
     }
 
