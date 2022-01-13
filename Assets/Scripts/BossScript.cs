@@ -7,15 +7,16 @@ public class BossScript : MonoBehaviour
 {
     public Transform player_pos;
     public PlayerScript player;
-    public float turn_smoothness, walk_smoothness, critical_distance, combat_distance, follow_distance, attack_speed, base_defend_chance, defend_chance, atk_time_end = 0.4f, death_time;
-    public TimedRandom horizontal_rng, vertical_rng, attack_rng;
+    public float turn_smoothness, walk_smoothness, critical_distance, combat_distance, follow_distance, attack_speed, 
+        base_defend_chance, low_defend_chance, high_defend_chance, defend_chance, atk_time_end = 0.4f, death_time;
+    public TimedRandom horizontal_rng, vertical_rng, attack_rng, taunt_rng;
     public bool defend = false, is_hurt = false, is_bashed = false, is_parried = false;
     public GameObject SwordHitbox, UpperbodyHurtbox, LowerbodyHurtbox;
 
     private Animator anim;
     private float horizontal = 1f, target_horizontal, vertical = 0f, target_vertical, distance, target_angle,
         rotation_angle, turn_smooth_velocity;
-    private bool is_moving = false, is_walking = false, is_following = false, is_attacking, on_ground = false, is_being_parried;
+    private bool is_moving = false, is_walking = false, is_following = false, is_attacking, on_ground = false, is_being_parried, is_taunting;
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -41,6 +42,7 @@ public class BossScript : MonoBehaviour
     {
         on_ground = anim.GetCurrentAnimatorStateInfo(0).IsName("Bashed") || anim.GetCurrentAnimatorStateInfo(0).IsName("Death after Bash");
         is_being_parried = anim.GetCurrentAnimatorStateInfo(0).IsName("Parried") || anim.GetCurrentAnimatorStateInfo(0).IsName("Recovery");
+        is_taunting = anim.GetCurrentAnimatorStateInfo(0).IsName("Taunting");
 
         anim.SetBool("out_of_combat", distance > follow_distance || player.is_hurt || player.is_hurt_legs);
         anim.SetBool("in_critical_distance", distance <= critical_distance);
@@ -71,6 +73,9 @@ public class BossScript : MonoBehaviour
 
         anim.SetBool("is_parried", is_parried);
         is_parried = false;
+
+        anim.SetBool("taunt", taunt_rng.one_use_value > 0.5f);
+        anim.SetBool("is_taunting", is_taunting);
     }
 
     private void Hitbox()
@@ -84,7 +89,9 @@ public class BossScript : MonoBehaviour
     {
         distance = Vector3.Distance(transform.position, player_pos.transform.position);
         if (is_attacking || on_ground || is_being_parried)
-            defend_chance = base_defend_chance * 0.5f;
+            defend_chance = low_defend_chance;
+        else if (is_taunting)
+            defend_chance = high_defend_chance;
         else
             defend_chance = base_defend_chance;
 
