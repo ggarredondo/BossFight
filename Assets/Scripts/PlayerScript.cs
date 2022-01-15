@@ -31,6 +31,8 @@ public class PlayerScript : MonoBehaviour
         dist_to_ground = controller.bounds.extents.y;
         is_locked = false;
         height_dir = Vector3.zero;
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = false;
     }
 
     private bool IsGrounded() {
