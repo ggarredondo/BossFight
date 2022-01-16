@@ -13,7 +13,9 @@ It's important to mention that it was my first time developing a game in 3D, and
 **- Dodge.** Press B (controller) or Left ALT (keyboard) to roll towards any direction. <br/>
 **- Attack 1.** Press RB (controller) or Left Click (mouse). Up to three different attacks. <br/>
 **- Attack 2.** Press RT (controller) or Right Click (mouse). Up to three different attacks. <br/>
-**- Parry.** Press Left Button (controller) or the Mouse Wheel to parry an incoming attack. Requires timing.
+**- Jump Attack.** Press Attack 1 after jumping. <br/>
+**- Parry.** Press Left Button (controller) or the Mouse Wheel to parry an incoming attack. Requires timing. <br/>
+**- Counter-attack.** Press Attack 2 after blocking successfully.
 <br/>
 <br/>
 # **CREDITS**
