@@ -18,5 +18,5 @@ It's important to mention that it was my first time developing a game in 3D, and
 <br/>
 # **CREDITS**
 **PROGRAMMING -** Guillermo García Arredondo <br/>
-**ANIMATION -** Guillermo García Arredondo, Kubold (Longsword Animset Pro, Sword Animset Pro, Movement Animset Pro)
-**MODELS -** Dmitriy Dryzhak (Masks packs 2), The Tales Factory (Photoscanned MoutainsRocks PBR), Alvarolopz98 (Aged Medieval Weapons), TASSIMOV (Total Wars: Rome Character pack)
+**ANIMATION -** Guillermo García Arredondo, Kubold (Longsword Animset Pro, Sword Animset Pro, Movement Animset Pro) <br/>
+**MODELS -** Alvarolopz98 (Aged Medieval Weapons), Dmitriy Dryzhak (Masks packs 2), TASSIMOV (Total Wars: Rome Character pack), The Tales Factory (Photoscanned MoutainsRocks PBR)
