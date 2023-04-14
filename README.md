@@ -1,3 +1,5 @@
+<sub>DISCLAIMER: This game was made in the course of two months while learning Unity and coding practices. It's lacking in both technical work and assets (most of which were from external sources).</sub>
+
 This game is a souls-like Boss Fight prototype I made for the module Creative Practice at Glasgow Caledonian University. It features two characters, one controlled by the player and another controlled by an AI, with distinct models and animations. Both fight in a enclosed arena and are defeated in one hit, after which the game restarts.
 
 It's important to mention that it was my first time developing a game in 3D, and it was made in the course of two months. It might be a bit rough around the edges in both game feel and technical work.
